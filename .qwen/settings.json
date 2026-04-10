@@ -5,7 +5,10 @@
       "Bash(npm install)",
       "Bash(mkdir *)",
       "Bash(npm run *)",
-      "Bash(taskkill *)"
+      "Bash(taskkill *)",
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
     ]
   },
   "$version": 3
