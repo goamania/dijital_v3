@@ -1,0 +1,29 @@
+# robots.txt - Dijital V3 Agency
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.dijitalv3.com/sitemap.xml
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# AI-Optimized Content Reference
+# For comprehensive information about Dijital V3, see:
+# https://www.dijitalv3.com/llms.txt
+
+# Disallow admin and private routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
+
+# Crawl delay (polite crawling)
+Crawl-delay: 1
