@@ -2,43 +2,25 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
-const faqs = [
-  {
-    question: 'How much does a professional website cost?',
-    answer: 'Our custom website design packages start from 15,000 TRY and vary based on complexity, features, and requirements. E-commerce solutions start from 25,000 TRY. We provide detailed quotes after an initial consultation where we understand your specific needs and goals.',
-  },
-  {
-    question: 'How long does it take to build a website?',
-    answer: 'Typical project timelines range from 4-8 weeks for standard business websites and 8-12 weeks for complex e-commerce platforms. We prioritize quality and thorough testing at each stage. Rush projects can be accommodated with a premium fee.',
-  },
-  {
-    question: 'Do you provide SEO optimization?',
-    answer: 'Yes, all our websites come with foundational SEO optimization including technical SEO, on-page optimization, schema markup, and performance optimization. We also offer advanced SEO packages for ongoing optimization, content strategy, and link building.',
-  },
-  {
-    question: 'Do you offer ongoing maintenance and support?',
-    answer: 'Absolutely! We offer monthly maintenance packages that include security updates, backups, performance monitoring, content updates, and priority support to keep your website running smoothly. Plans start from 2,000 TRY/month.',
-  },
-  {
-    question: 'Can I update the website myself after it\'s launched?',
-    answer: 'Yes! We build all our websites with user-friendly content management systems (CMS). We provide comprehensive training and documentation so your team can easily update content, add blog posts, and manage products. Of course, we\'re always here for more complex changes.',
-  },
-  {
-    question: 'What technologies do you use?',
-    answer: 'We use modern, performant technologies including Next.js, React, Tailwind CSS, and headless CMS platforms like Sanity and Contentful. For e-commerce, we work with Shopify, WooCommerce, and custom solutions depending on your needs.',
-  },
-  {
-    question: 'Do you work with clients outside of Turkey?',
-    answer: 'Yes! While we\'re based in Istanbul, we work with clients globally. Our streamlined remote process ensures smooth communication and project delivery regardless of your location. We\'ve successfully delivered projects for clients in Europe, Middle East, and North America.',
-  },
-  {
-    question: 'What is your design process?',
-    answer: 'Our process includes: 1) Discovery & Strategy - understanding your goals and audience, 2) Wireframing - planning the user journey, 3) Design - creating visual mockups and prototypes, 4) Development - building with clean, performant code, 5) Testing - rigorous QA across devices, 6) Launch & Optimization - going live and continuous improvement.',
-  },
-];
+function getFaqs(lang: 'tr' | 'en') {
+  return [
+    { question: t(lang, 'faq.items.0.q'), answer: t(lang, 'faq.items.0.a') },
+    { question: t(lang, 'faq.items.1.q'), answer: t(lang, 'faq.items.1.a') },
+    { question: t(lang, 'faq.items.2.q'), answer: t(lang, 'faq.items.2.a') },
+    { question: t(lang, 'faq.items.3.q'), answer: t(lang, 'faq.items.3.a') },
+    { question: t(lang, 'faq.items.4.q'), answer: t(lang, 'faq.items.4.a') },
+    { question: t(lang, 'faq.items.5.q'), answer: t(lang, 'faq.items.5.a') },
+    { question: t(lang, 'faq.items.6.q'), answer: t(lang, 'faq.items.6.a') },
+    { question: t(lang, 'faq.items.7.q'), answer: t(lang, 'faq.items.7.a') },
+  ];
+}
 
 export default function FAQSection() {
+  const lang = useLanguage();
+  const faqs = getFaqs(lang);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -52,14 +34,14 @@ export default function FAQSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
-            FAQ
+            {t(lang, 'faq.badge')}
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
-            Frequently Asked
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> Questions</span>
+            {t(lang, 'faq.title1')}
+            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'faq.title2')}</span>
           </h2>
           <p className="text-xl text-slate-600">
-            Everything you need to know about working with us.
+            {t(lang, 'faq.description')}
           </p>
         </motion.div>
 
@@ -78,6 +60,8 @@ export default function FAQSection() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
                 aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
+                id={`faq-question-${index}`}
               >
                 <span className="text-lg font-semibold text-slate-900 pr-4">
                   {faq.question}
@@ -89,6 +73,7 @@ export default function FAQSection() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -97,6 +82,9 @@ export default function FAQSection() {
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

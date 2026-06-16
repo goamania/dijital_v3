@@ -1,40 +1,49 @@
+'use client';
+
 import Link from 'next/link';
 import {
   MapPinIcon,
   PhoneIcon,
   EnvelopeIcon,
 } from '@heroicons/react/24/outline';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
-const footerNavigation = {
-  services: [
-    { name: 'Custom Website Design', href: '/services/web-design' },
-    { name: 'E-commerce Development', href: '/services/ecommerce' },
-    { name: 'SEO Optimization', href: '/services/seo' },
-    { name: 'Brand Identity', href: '/services/branding' },
-    { name: 'Digital Marketing', href: '/services/digital-marketing' },
-  ],
-  industries: [
-    { name: 'E-commerce', href: '/industries/ecommerce' },
-    { name: 'Healthcare', href: '/industries/healthcare' },
-    { name: 'Real Estate', href: '/industries/realestate' },
-    { name: 'Restaurants', href: '/industries/restaurants' },
-  ],
-  company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
-  ],
-  support: [
-    { name: 'Contact', href: '/contact' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-  ],
-};
+function getFooterNav(lang: 'tr' | 'en') {
+  return {
+    services: [
+      { name: t(lang, 'services.items.webDesign.title'), href: '/hizmetler/web-tasarim' },
+      { name: t(lang, 'services.items.ecommerce.title'), href: '/hizmetler/e-ticaret' },
+      { name: t(lang, 'services.items.seo.title'), href: '/hizmetler/seo' },
+      { name: t(lang, 'services.items.branding.title'), href: '/hizmetler/marka-kimligi' },
+      { name: t(lang, 'services.items.marketing.title'), href: '/hizmetler/dijital-pazarlama' },
+    ],
+    industries: [
+      { name: t(lang, 'industries.items.ecommerce.name'), href: '/sektorler/e-ticaret' },
+      { name: t(lang, 'industries.items.healthcare.name'), href: '/sektorler/saglik' },
+      { name: t(lang, 'industries.items.realestate.name'), href: '/sektorler/emlak' },
+      { name: t(lang, 'industries.items.restaurants.name'), href: '/sektorler/restoran' },
+    ],
+    company: [
+      { name: t(lang, 'footer.companyItems.about'), href: '/hakkimizda' },
+      { name: t(lang, 'footer.companyItems.portfolio'), href: '/portfoy' },
+      { name: t(lang, 'footer.companyItems.caseStudies'), href: '/vaka-calismalari' },
+      { name: t(lang, 'footer.companyItems.blog'), href: '/blog' },
+      { name: t(lang, 'footer.companyItems.careers'), href: '/kariyer' },
+    ],
+    support: [
+      { name: t(lang, 'footer.supportItems.contact'), href: '/iletisim' },
+      { name: t(lang, 'footer.supportItems.faq'), href: '/sss' },
+      { name: t(lang, 'footer.supportItems.privacy'), href: '/gizlilik' },
+      { name: t(lang, 'footer.supportItems.terms'), href: '/sartlar' },
+    ],
+  };
+}
 
 export default function Footer() {
+  const lang = useLanguage();
+  const footerNavigation = getFooterNav(lang);
+
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -48,7 +57,7 @@ export default function Footer() {
               <span className="text-2xl font-display font-bold">Dijital V3</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Award-winning web design agency creating digital excellence. We transform your vision into stunning, high-converting websites.
+              {t(lang, 'footer.description')}
             </p>
             
             {/* Contact Info */}
@@ -90,7 +99,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-4">{t(lang, 'footer.services')}</h3>
             <ul className="space-y-3">
               {footerNavigation.services.map((item) => (
                 <li key={item.name}>
@@ -104,7 +113,7 @@ export default function Footer() {
 
           {/* Industries */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Industries</h3>
+            <h3 className="text-lg font-semibold mb-4">{t(lang, 'footer.industries')}</h3>
             <ul className="space-y-3">
               {footerNavigation.industries.map((item) => (
                 <li key={item.name}>
@@ -118,7 +127,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-lg font-semibold mb-4">{t(lang, 'footer.company')}</h3>
             <ul className="space-y-3">
               {footerNavigation.company.map((item) => (
                 <li key={item.name}>
@@ -132,7 +141,7 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
+            <h3 className="text-lg font-semibold mb-4">{t(lang, 'footer.support')}</h3>
             <ul className="space-y-3">
               {footerNavigation.support.map((item) => (
                 <li key={item.name}>
@@ -148,17 +157,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Dijital V3 Agency. All rights reserved.
+            {t(lang, 'footer.rights').replace('2026', String(new Date().getFullYear()))}
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
-              Privacy
+            <Link href="/gizlilik" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
+              {t(lang, 'footer.privacy')}
             </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
-              Terms
+            <Link href="/sartlar" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
+              {t(lang, 'footer.terms')}
             </Link>
-            <Link href="/cookies" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
-              Cookies
+            <Link href="/cerezler" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
+              {t(lang, 'footer.cookies')}
             </Link>
           </div>
         </div>

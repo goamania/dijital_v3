@@ -10,58 +10,20 @@ import {
   WrenchScrewdriverIcon,
   CommandLineIcon,
 } from '@heroicons/react/24/outline';
+import { useLanguage } from '@/lib/i18n-context';
+import { t, ta } from '@/lib/i18n';
 
-const services = [
-  {
-    icon: ComputerDesktopIcon,
-    title: 'Custom Website Design',
-    description: 'Bespoke, high-converting websites tailored to your brand and business goals.',
-    features: ['Next.js & React', 'Tailwind CSS', 'Responsive Design', 'Performance Optimized', 'SEO Ready'],
-    href: '/services/web-design',
-  },
-  {
-    icon: ShoppingBagIcon,
-    title: 'E-commerce Development',
-    description: 'Full-featured online stores with optimized checkout flows and payment integration.',
-    features: ['Payment Gateway', 'Inventory Management', 'Analytics Dashboard'],
-    href: '/services/ecommerce',
-  },
-  {
-    icon: MagnifyingGlassIcon,
-    title: 'SEO Optimization',
-    description: 'Comprehensive search engine optimization for maximum visibility and traffic.',
-    features: ['Technical SEO', 'Content Strategy', 'Schema Markup'],
-    href: '/services/seo',
-  },
-  {
-    icon: PaintBrushIcon,
-    title: 'Brand Identity Design',
-    description: 'Complete branding packages including logo, guidelines, and visual identity systems.',
-    features: ['Logo Design', 'Brand Guidelines', 'Visual Identity'],
-    href: '/services/branding',
-  },
-  {
-    icon: MegaphoneIcon,
-    title: 'Digital Marketing',
-    description: 'Strategic campaigns including PPC, social media, and content marketing.',
-    features: ['PPC Campaigns', 'Social Media', 'Content Marketing'],
-    href: '/services/digital-marketing',
-  },
-  {
-    icon: WrenchScrewdriverIcon,
-    title: 'Website Maintenance',
-    description: 'Ongoing support including security updates, backups, and performance monitoring.',
-    features: ['Security Updates', 'Daily Backups', '24/7 Monitoring'],
-    href: '/services/maintenance',
-  },
-  {
-    icon: CommandLineIcon,
-    title: 'Modern Tech Stack',
-    description: 'Built with cutting-edge technologies for blazing-fast, scalable, and maintainable web applications.',
-    features: ['Next.js 14+', 'React 18', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-    href: '/services/tech-stack',
-  },
-];
+function getServices(lang: 'tr' | 'en') {
+  return [
+    { icon: ComputerDesktopIcon, title: t(lang, 'services.items.webDesign.title'), description: t(lang, 'services.items.webDesign.desc'), features: ta(lang, 'services.items.webDesign.features'), href: '/hizmetler/web-tasarim' },
+    { icon: ShoppingBagIcon, title: t(lang, 'services.items.ecommerce.title'), description: t(lang, 'services.items.ecommerce.desc'), features: ta(lang, 'services.items.ecommerce.features'), href: '/hizmetler/e-ticaret' },
+    { icon: MagnifyingGlassIcon, title: t(lang, 'services.items.seo.title'), description: t(lang, 'services.items.seo.desc'), features: ta(lang, 'services.items.seo.features'), href: '/hizmetler/seo' },
+    { icon: PaintBrushIcon, title: t(lang, 'services.items.branding.title'), description: t(lang, 'services.items.branding.desc'), features: ta(lang, 'services.items.branding.features'), href: '/hizmetler/marka-kimligi' },
+    { icon: MegaphoneIcon, title: t(lang, 'services.items.marketing.title'), description: t(lang, 'services.items.marketing.desc'), features: ta(lang, 'services.items.marketing.features'), href: '/hizmetler/dijital-pazarlama' },
+    { icon: WrenchScrewdriverIcon, title: t(lang, 'services.items.maintenance.title'), description: t(lang, 'services.items.maintenance.desc'), features: ta(lang, 'services.items.maintenance.features'), href: '/hizmetler/bakim' },
+    { icon: CommandLineIcon, title: t(lang, 'services.items.techStack.title'), description: t(lang, 'services.items.techStack.desc'), features: ta(lang, 'services.items.techStack.features'), href: '/hizmetler/teknoloji' },
+  ];
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -81,6 +43,9 @@ const itemVariants = {
 };
 
 export default function ServicesSection() {
+  const lang = useLanguage();
+  const services = getServices(lang);
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,14 +57,14 @@ export default function ServicesSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
-            Our Services
+            {t(lang, 'services.badge')}
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
-            Everything You Need to
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> Succeed Online</span>
+            {t(lang, 'services.title1')}
+            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'services.title2')}</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            From concept to launch and beyond, we provide comprehensive digital solutions that drive results.
+            {t(lang, 'services.description')}
           </p>
         </motion.div>
 
@@ -148,7 +113,7 @@ export default function ServicesSection() {
 
               {/* CTA */}
               <div className="flex items-center text-primary-600 font-semibold group-hover:gap-3 gap-2 transition-all">
-                Learn More
+                {t(lang, 'services.learnMore')}
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

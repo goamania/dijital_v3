@@ -4,6 +4,8 @@ import { useState, useOptimistic, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircleIcon, ExclamationCircleIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import { submitLead } from '@/app/actions/lead';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
 type FormState = {
   name: string;
@@ -12,6 +14,7 @@ type FormState = {
   company: string;
   service: string;
   message: string;
+  kvkk: boolean; // KVKK onayı — Türkiye'de yasal zorunluluk
 };
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -23,6 +26,7 @@ type OptimisticState = {
 };
 
 export default function LeadForm() {
+  const lang = useLanguage();
   const [formData, setFormData] = useState<FormState>({
     name: '',
     email: '',
@@ -30,6 +34,7 @@ export default function LeadForm() {
     company: '',
     service: '',
     message: '',
+    kvkk: false,
   });
 
   const [optimisticState, setOptimistic] = useOptimistic<OptimisticState>({
@@ -42,18 +47,30 @@ export default function LeadForm() {
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    // Checkbox için 'checked', diğer inputlar için 'value' kullan
+    if (type === 'checkbox') {
+      setFormData((prev) => ({ ...prev, [name]: (e.target as HTMLInputElement).checked }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // KVKK onayı kontrolü — yasal zorunluluk
+    if (!formData.kvkk) {
+      setStatus('error');
+      setMessage(t(lang, 'contact.kvkk.required'));
+      return;
+    }
     
     // Optimistic update - show success immediately
     setOptimistic({
       formData,
       status: 'success',
-      message: 'Thank you! We\'ll contact you within 24 hours.',
+      message: t(lang, 'contact.success.message'),
     });
 
     // Actual submission
@@ -72,26 +89,27 @@ export default function LeadForm() {
           company: '',
           service: '',
           message: '',
+          kvkk: false,
         });
         formRef.current?.reset();
       } else {
         setStatus('error');
-        setMessage(result.message || 'Something went wrong. Please try again.');
+        setMessage(result.message || t(lang, 'contact.error.message'));
       }
     } catch (error) {
       setStatus('error');
-      setMessage('Failed to submit. Please check your connection and try again.');
+      setMessage(t(lang, 'contact.error.message'));
     }
   };
 
   const services = [
-    { value: '', label: 'Select a Service' },
-    { value: 'web-design', label: 'Custom Website Design' },
-    { value: 'ecommerce', label: 'E-commerce Development' },
-    { value: 'seo', label: 'SEO Optimization' },
-    { value: 'branding', label: 'Brand Identity Design' },
-    { value: 'digital-marketing', label: 'Digital Marketing' },
-    { value: 'maintenance', label: 'Website Maintenance' },
+    { value: '', label: t(lang, 'contact.serviceOptions.select') },
+    { value: 'web-design', label: t(lang, 'contact.serviceOptions.webDesign') },
+    { value: 'ecommerce', label: t(lang, 'contact.serviceOptions.ecommerce') },
+    { value: 'seo', label: t(lang, 'contact.serviceOptions.seo') },
+    { value: 'branding', label: t(lang, 'contact.serviceOptions.branding') },
+    { value: 'digital-marketing', label: t(lang, 'contact.serviceOptions.marketing') },
+    { value: 'maintenance', label: t(lang, 'contact.serviceOptions.maintenance') },
   ];
 
   return (
@@ -104,11 +122,11 @@ export default function LeadForm() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
-            Let's Build Something
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> Amazing</span>
+            {t(lang, 'contact.title1')}
+            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'contact.title2')}</span>
           </h2>
           <p className="text-xl text-slate-600">
-            Tell us about your project and we'll get back to you within 24 hours
+            {t(lang, 'contact.description')}
           </p>
         </motion.div>
 
@@ -122,9 +140,9 @@ export default function LeadForm() {
               className="bg-white rounded-2xl shadow-xl p-12 text-center"
             >
               <CheckCircleIcon className="w-20 h-20 text-green-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Thank You!</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t(lang, 'contact.success.title')}</h3>
               <p className="text-lg text-slate-600 mb-8">
-                {optimisticState.message || 'Your message has been received. Our team will contact you shortly.'}
+                {optimisticState.message || t(lang, 'contact.success.message')}
               </p>
               <button
                 onClick={() => {
@@ -133,7 +151,7 @@ export default function LeadForm() {
                 }}
                 className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
               >
-                Submit Another Request
+                {t(lang, 'contact.success.resubmit')}
               </button>
             </motion.div>
           ) : (
@@ -149,7 +167,7 @@ export default function LeadForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Full Name *
+                    {t(lang, 'contact.fields.name')} *
                   </label>
                   <input
                     type="text"
@@ -159,13 +177,13 @@ export default function LeadForm() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    placeholder={t(lang, 'contact.fields.name')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Email Address *
+                    {t(lang, 'contact.fields.email')} *
                   </label>
                   <input
                     type="email"
@@ -175,13 +193,13 @@ export default function LeadForm() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                    placeholder="john@company.com"
+                    placeholder={t(lang, 'contact.fields.email')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Phone Number
+                    {t(lang, 'contact.fields.phone')}
                   </label>
                   <input
                     type="tel"
@@ -190,13 +208,13 @@ export default function LeadForm() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                    placeholder="+90 555 123 4567"
+                    placeholder="+90 531 276 0791"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Company Name
+                    {t(lang, 'contact.fields.company')}
                   </label>
                   <input
                     type="text"
@@ -205,14 +223,14 @@ export default function LeadForm() {
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                    placeholder="Your Company"
+                    placeholder={t(lang, 'contact.fields.company')}
                   />
                 </div>
               </div>
 
               <div className="mb-6">
                 <label htmlFor="service" className="block text-sm font-semibold text-slate-700 mb-2">
-                  Service Needed *
+                  {t(lang, 'contact.fields.service')} *
                 </label>
                 <select
                   id="service"
@@ -232,7 +250,7 @@ export default function LeadForm() {
 
               <div className="mb-8">
                 <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                  Project Details *
+                  {t(lang, 'contact.fields.message')} *
                 </label>
                 <textarea
                   id="message"
@@ -242,8 +260,25 @@ export default function LeadForm() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
-                  placeholder="Tell us about your project, goals, and timeline..."
+                  placeholder={t(lang, 'contact.fields.message')}
                 />
+              </div>
+
+              {/* KVKK Onayı — 6698 sayılı Kişisel Verilerin Korunması Kanunu gereği zorunludur */}
+              <div className="mb-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="kvkk"
+                    checked={formData.kvkk}
+                    onChange={handleInputChange}
+                    className="mt-1 w-5 h-5 text-primary-600 border-slate-300 rounded focus:ring-primary-500 cursor-pointer flex-shrink-0"
+                    aria-required="true"
+                  />
+                  <span className="text-sm text-slate-600 leading-relaxed">
+                    {t(lang, 'contact.kvkkFullText')}
+                  </span>
+                </label>
               </div>
 
               <AnimatePresence>
@@ -263,25 +298,25 @@ export default function LeadForm() {
               <motion.button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 text-lg"
+                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 text-lg"
                 whileHover={{ scale: status === 'submitting' ? 1 : 1.02 }}
                 whileTap={{ scale: status === 'submitting' ? 1 : 0.98 }}
               >
                 {status === 'submitting' ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    Submitting...
+                    {t(lang, 'contact.submitting')}
                   </>
                 ) : (
                   <>
                     <PaperAirplaneIcon className="w-6 h-6" />
-                    Send Message
+                    {t(lang, 'contact.submit')}
                   </>
                 )}
               </motion.button>
 
               <p className="mt-4 text-sm text-slate-500 text-center">
-                🔒 Your information is secure and will never be shared
+                🔒 {t(lang, 'contact.security')}
               </p>
             </motion.form>
           )}

@@ -2,39 +2,22 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
-const industries = [
-  {
-    name: 'E-commerce',
-    description: 'High-converting online stores with optimized checkout flows and inventory management.',
-    icon: '🛒',
-    href: '/industries/ecommerce',
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    name: 'Healthcare',
-    description: 'Professional medical websites with appointment booking and patient portals.',
-    icon: '🏥',
-    href: '/industries/healthcare',
-    color: 'from-green-500 to-emerald-500',
-  },
-  {
-    name: 'Real Estate',
-    description: 'Property listing platforms with advanced search and virtual tours.',
-    icon: '🏠',
-    href: '/industries/realestate',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    name: 'Restaurants',
-    description: 'Appetizing restaurant websites with online ordering and reservation systems.',
-    icon: '🍽️',
-    href: '/industries/restaurants',
-    color: 'from-orange-500 to-red-500',
-  },
-];
+function getIndustries(lang: 'tr' | 'en') {
+  return [
+    { name: t(lang, 'industries.items.ecommerce.name'), description: t(lang, 'industries.items.ecommerce.desc'), icon: '🛒', href: '/sektorler/e-ticaret', color: 'from-blue-500 to-cyan-500' },
+    { name: t(lang, 'industries.items.healthcare.name'), description: t(lang, 'industries.items.healthcare.desc'), icon: '🏥', href: '/sektorler/saglik', color: 'from-green-500 to-emerald-500' },
+    { name: t(lang, 'industries.items.realestate.name'), description: t(lang, 'industries.items.realestate.desc'), icon: '🏠', href: '/sektorler/emlak', color: 'from-purple-500 to-pink-500' },
+    { name: t(lang, 'industries.items.restaurants.name'), description: t(lang, 'industries.items.restaurants.desc'), icon: '🍽️', href: '/sektorler/restoran', color: 'from-orange-500 to-red-500' },
+  ];
+}
 
 export default function IndustriesSection() {
+  const lang = useLanguage();
+  const industries = getIndustries(lang);
+
   return (
     <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,14 +29,14 @@ export default function IndustriesSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
-            Industries We Serve
+            {t(lang, 'industries.badge')}
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
-            Specialized Solutions for
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> Your Industry</span>
+            {t(lang, 'industries.title1')}
+            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'industries.title2')}</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            We understand the unique challenges and opportunities of different industries and tailor our approach accordingly.
+            {t(lang, 'industries.description')}
           </p>
         </motion.div>
 
@@ -91,7 +74,7 @@ export default function IndustriesSection() {
                     {industry.description}
                   </p>
                   <div className="flex items-center text-primary-600 font-semibold gap-2 group-hover:gap-3 transition-all">
-                    Learn More
+                    {t(lang, 'industries.learnMore')}
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

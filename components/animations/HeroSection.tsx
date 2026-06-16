@@ -3,18 +3,31 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRightIcon, PlayIcon } from '@heroicons/react/24/outline';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
 // Lazy load the heavy 3D component
 const HeroVisual = lazy(() => import('./HeroVisual'));
 
 export default function HeroSection() {
+  const lang = useLanguage();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Varsayılan: mobil (güvenli)
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
     setIsLoaded(true);
+    // Masaüstü tespiti: dokunmatik olmayan + geniş ekran → 3D render et
+    const checkMobile = () => {
+      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isNarrow = window.innerWidth < 1024;
+      setIsMobile(hasTouch || isNarrow);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const containerVariants = {
@@ -42,12 +55,20 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900">
-      {/* 3D Background - Lazy Loaded */}
+      {/* 3D Background — Sadece masaüstünde render edilir, mobilde performans için atlanır */}
       <div className="absolute inset-0 opacity-40">
-        {isLoaded && (
+        {isLoaded && !isMobile && (
           <Suspense fallback={null}>
             <HeroVisual />
           </Suspense>
+        )}
+        {/* Mobil fallback: Statik degrade arka plan */}
+        {isMobile && (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-slate-900 to-primary-800">
+            <div className="absolute inset-0 opacity-30" style={{
+              backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(79, 70, 229, 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(245, 158, 11, 0.2) 0%, transparent 50%)',
+            }} />
+          </div>
         )}
       </div>
 
@@ -82,7 +103,7 @@ export default function HeroSection() {
       >
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-block px-4 py-2 rounded-full bg-primary-500/20 border border-primary-400/30 text-primary-300 text-sm font-medium backdrop-blur-sm">
-            ✨ Award-Winning Web Design Agency
+            {t(lang, 'hero.badge')}
           </span>
         </motion.div>
 
@@ -90,9 +111,9 @@ export default function HeroSection() {
           variants={itemVariants}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight"
         >
-          We Create
+          {t(lang, 'hero.title1')}
           <span className="block bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-            Digital Excellence
+            {t(lang, 'hero.title2')}
           </span>
         </motion.h1>
 
@@ -100,7 +121,7 @@ export default function HeroSection() {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Transform your vision into stunning websites that captivate, convert, and elevate your brand to new heights.
+          {t(lang, 'hero.description')}
         </motion.p>
 
         <motion.div
@@ -113,7 +134,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(14, 165, 233, 0.4)' }}
             whileTap={{ scale: 0.95 }}
           >
-            Start Your Project
+            {t(lang, 'hero.cta')}
             <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 

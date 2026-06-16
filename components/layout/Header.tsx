@@ -1,22 +1,41 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-
-const navigation = [
-  { name: 'Services', href: '/services' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/#contact' },
-];
+import { Bars3Icon, XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
 export default function Header() {
+  const lang = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Dil değiştirme — Next.js router ile sayfa yenilemeden geçiş
+  const switchLang = useCallback(() => {
+    // Cookie'yi ayarla
+    if (lang === 'tr') {
+      document.cookie = 'lang=en; path=/; max-age=31536000; SameSite=Lax';
+      // Next.js router ile yumuşak geçiş (tam sayfa yenilemesi olmaz)
+      router.push(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, '')}`);
+    } else {
+      document.cookie = 'lang=tr; path=/; max-age=31536000; SameSite=Lax';
+      router.push(pathname.replace(/^\/en/, '') || '/');
+    }
+  }, [lang, pathname, router]);
+
+  const navigation = [
+    { name: t(lang, 'header.services'), href: '/hizmetler' },
+    { name: t(lang, 'header.portfolio'), href: '/portfoy' },
+    { name: t(lang, 'header.industries'), href: '/sektorler' },
+    { name: t(lang, 'header.about'), href: '/hakkimizda' },
+    { name: t(lang, 'header.blog'), href: '/blog' },
+    { name: t(lang, 'header.contact'), href: '/#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +71,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6" role="navigation" aria-label={lang === 'tr' ? 'Ana menü' : 'Main navigation'}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -60,23 +79,41 @@ export default function Header() {
                 className={`text-sm font-medium transition-colors hover:text-primary-500 ${
                   scrolled ? 'text-slate-700' : 'text-white/90'
                 }`}
+                aria-current={pathname === item.href ? 'page' : undefined}
               >
                 {item.name}
               </Link>
             ))}
+            
+            {/* Dil Değiştirici */}
+            <button
+              onClick={switchLang}
+              className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-full border transition-all ${
+                scrolled 
+                  ? 'border-slate-300 text-slate-700 hover:bg-slate-100' 
+                  : 'border-white/30 text-white hover:bg-white/10'
+              }`}
+              title={lang === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç'}
+            >
+              <LanguageIcon className="w-4 h-4" />
+              <span>{lang === 'tr' ? 'EN' : 'TR'}</span>
+            </button>
+
             <Link
               href="/#contact"
               className="px-5 py-2.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-full text-sm hover:shadow-lg hover:shadow-primary-500/30 transition-all"
             >
-              Get a Quote
+              {t(lang, 'header.getStarted')}
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? (lang === 'tr' ? 'Menüyü kapat' : 'Close menu') : (lang === 'tr' ? 'Menüyü aç' : 'Open menu')}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? (
               <XMarkIcon className={`w-6 h-6 ${scrolled ? 'text-slate-900' : 'text-white'}`} />
@@ -90,11 +127,14 @@ export default function Header() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="md:hidden bg-white rounded-2xl shadow-xl mt-2 p-6"
+              role="navigation"
+              aria-label={lang === 'tr' ? 'Mobil menü' : 'Mobile navigation'}
             >
               <div className="flex flex-col gap-4">
                 {navigation.map((item) => (
@@ -107,12 +147,22 @@ export default function Header() {
                     {item.name}
                   </Link>
                 ))}
+                <button
+                  onClick={() => {
+                    switchLang();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex items-center justify-center gap-2 py-2.5 px-4 border-2 border-primary-500 text-primary-600 font-semibold rounded-full text-sm hover:bg-primary-50 transition-colors"
+                >
+                  <LanguageIcon className="w-4 h-4" />
+                  {lang === 'tr' ? 'English (EN)' : 'Türkçe (TR)'}
+                </button>
                 <Link
                   href="/#contact"
                   className="px-5 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-full text-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get a Quote
+                  {t(lang, 'header.getStarted')}
                 </Link>
               </div>
             </motion.div>

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { cookies } from "next/headers";
+import { LanguageProvider } from "@/lib/i18n-context";
+import type { Language } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,22 +22,29 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dijitalv3.com'),
   title: {
-    default: "Dijital V3 | Premium Web Design & Digital Agency",
+    default: "Dijital V3 | Ödüllü Web Tasarım & Dijital Ajans",
     template: "%s | Dijital V3",
   },
-  description: "Award-winning web design agency specializing in high-converting websites, e-commerce solutions, and digital transformation. Serving businesses across Turkey with cutting-edge design and SEO optimization.",
-  keywords: ["web design", "digital agency", "e-commerce", "SEO optimization", "brand identity", "web development"],
-  authors: [{ name: "Dijital V3 Agency" }],
+  description: "Vizyonunuzu etkileyen, dönüştüren ve markanızı yükselten çarpıcı web siteleri. Premium web tasarım, e-ticaret ve dijital pazarlama hizmetleri.",
+  keywords: ["web tasarım", "dijital ajans", "e-ticaret", "SEO optimizasyonu", "marka kimliği", "web geliştirme"],
+  authors: [{ name: "Dijital V3 Ajans" }],
   creator: "Dijital V3",
-  publisher: "Dijital V3 Agency",
+  publisher: "Dijital V3 Ajans",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+  alternates: {
+    canonical: "https://www.dijitalv3.com",
+    languages: {
+      "tr": "https://www.dijitalv3.com",
+      "en": "https://www.dijitalv3.com/en",
+    },
+  },
   openGraph: {
-    title: "Dijital V3 | Premium Web Design & Digital Agency",
-    description: "Award-winning web design agency specializing in high-converting websites, e-commerce solutions, and digital transformation.",
+    title: "Dijital V3 | Ödüllü Web Tasarım & Dijital Ajans",
+    description: "Vizyonunuzu etkileyen, dönüştüren ve markanızı yükselten çarpıcı web siteleri.",
     url: "https://www.dijitalv3.com",
     siteName: "Dijital V3",
     images: [
@@ -42,7 +52,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Dijital V3 - Premium Web Design Agency",
+        alt: "Dijital V3 - Premium Web Tasarım Ajansı",
       },
     ],
     locale: "tr_TR",
@@ -50,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dijital V3 | Premium Web Design & Digital Agency",
-    description: "Award-winning web design agency specializing in high-converting websites, e-commerce solutions, and digital transformation.",
+    title: "Dijital V3 | Ödüllü Web Tasarım & Dijital Ajans",
+    description: "Vizyonunuzu etkileyen, dönüştüren ve markanızı yükselten çarpıcı web siteleri.",
     images: ["/twitter-image.jpg"],
   },
   robots: {
@@ -70,11 +80,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Dili cookie'den tespit et
+  const cookieStore = await cookies();
+  const langCookie = cookieStore.get('lang')?.value;
+  const lang: Language = (langCookie === 'en' ? 'en' : 'tr');
+
+  // Skip-to-content metni
+  const skipToContentText = lang === 'tr' ? 'Ana içeriğe atla' : 'Skip to main content';
   // Organization Schema
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -250,6 +267,34 @@ const webSiteSchema = {
   },
 };
 
+// Course Schema — Eğitim programları için (SEO: Google Course rich result)
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Full-Stack Web Tasarım ve SEO Uzmanlığı Eğitimi',
+  description: 'Kapsamlı full-stack web geliştirme, SEO ve dijital pazarlama eğitimi.',
+  provider: { '@id': 'https://www.dijitalv3.com/#organization' },
+  educationalCredentialAwarded: 'Sertifika',
+  teaches: ['Web Tasarım', 'HTML, CSS ve JavaScript', 'TypeScript', 'Next.js', 'Tailwind CSS', 'SEO/AEO/GEO'],
+  inLanguage: 'tr',
+  offers: { '@type': 'Offer', price: '15000', priceCurrency: 'TRY' },
+};
+
+// HowTo Schema — Adım adım süreç (Google HowTo rich result)
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: lang === 'tr' ? 'Profesyonel Web Sitesi Yapım Süreci' : 'Professional Website Development Process',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: lang === 'tr' ? 'Keşif ve Strateji' : 'Discovery & Strategy' },
+    { '@type': 'HowToStep', position: 2, name: lang === 'tr' ? 'Wireframe ve Planlama' : 'Wireframing & Planning' },
+    { '@type': 'HowToStep', position: 3, name: lang === 'tr' ? 'Tasarım ve Prototip' : 'Design & Prototype' },
+    { '@type': 'HowToStep', position: 4, name: lang === 'tr' ? 'Geliştirme' : 'Development' },
+    { '@type': 'HowToStep', position: 5, name: lang === 'tr' ? 'Test ve Kalite Kontrol' : 'Testing & QA' },
+    { '@type': 'HowToStep', position: 6, name: lang === 'tr' ? 'Lansman ve Optimizasyon' : 'Launch & Optimization' },
+  ],
+};
+
 // FAQPage Schema
 const faqPageSchema = {
   "@context": "https://schema.org",
@@ -292,46 +337,74 @@ const faqPageSchema = {
 };
 
 return (
-  <html lang="tr" className={`${inter.variable} ${plusJakarta.variable}`}>
-    <head>
-      <link rel="canonical" href="https://www.dijitalv3.com" />
-      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-      
-      {/* Organization Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
-        }}
-      />
-      
-      {/* ProfessionalService Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(professionalServiceSchema),
-        }}
-      />
-      
-      {/* WebSite Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webSiteSchema),
-        }}
-      />
-      
-      {/* FAQPage Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqPageSchema),
-        }}
-      />
-    </head>
-    <body className="antialiased">
-      {children}
-    </body>
-  </html>
-);
+    <html lang={lang} className={`${inter.variable} ${plusJakarta.variable}`}>
+      <head>
+        <link rel="canonical" href={lang === 'en' ? 'https://www.dijitalv3.com/en' : 'https://www.dijitalv3.com'} />
+        <link rel="alternate" hrefLang="tr" href="https://www.dijitalv3.com" />
+        <link rel="alternate" hrefLang="en" href="https://www.dijitalv3.com/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.dijitalv3.com" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        
+        {/* ProfessionalService Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(professionalServiceSchema),
+          }}
+        />
+        
+        {/* WebSite Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteSchema),
+          }}
+        />
+        
+        {/* FAQPage Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqPageSchema),
+          }}
+        />
+
+        {/* Course Schema — Eğitim zengin sonucu */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(courseSchema),
+          }}
+        />
+
+        {/* HowTo Schema — Adım adım zengin sonucu */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(howToSchema),
+          }}
+        />
+      </head>
+      <body className="antialiased">
+        {/* Erişilebilirlik: Klavye kullanıcıları için ana içeriğe atlama bağlantısı */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-3 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+        >
+          {skipToContentText}
+        </a>
+        <LanguageProvider lang={lang}>
+          {children}
+        </LanguageProvider>
+      </body>
+    </html>
+  );
 }

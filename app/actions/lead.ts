@@ -24,6 +24,7 @@ export async function submitLead(formData: {
   company?: string;
   service: string;
   message: string;
+  kvkk?: boolean; // KVKK onay durumu (frontend'de zaten kontrol ediliyor)
 }): Promise<LeadResult> {
   try {
     // Validate form data
@@ -69,14 +70,14 @@ export async function submitLead(formData: {
 
     return {
       success: true,
-      message: 'Thank you! We\'ll contact you within 24 hours.',
+      message: 'Mesajınız alındı. Ekibimiz en kısa sürede (genellikle 24 saat içinde) sizinle iletişime geçecek.',
       data: validatedData,
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        message: error.issues[0]?.message || 'Validation failed',
+        message: error.issues[0]?.message || 'Doğrulama hatası oluştu. Lütfen tüm alanları kontrol edin.',
       };
     }
 

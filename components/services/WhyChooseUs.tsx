@@ -1,42 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/i18n-context';
+import { t } from '@/lib/i18n';
 
-const stats = [
-  { value: '150+', label: 'Projects Delivered', icon: '🚀' },
-  { value: '98%', label: 'Client Satisfaction', icon: '⭐' },
-  { value: '12+', label: 'Industry Awards', icon: '🏆' },
-  { value: '6+', label: 'Years Experience', icon: '💼' },
-];
+function getStats(lang: 'tr' | 'en') {
+  return [
+    { value: t(lang, 'whyUs.stats.projects.value'), label: t(lang, 'whyUs.stats.projects.label'), icon: '🚀' },
+    { value: t(lang, 'whyUs.stats.satisfaction.value'), label: t(lang, 'whyUs.stats.satisfaction.label'), icon: '⭐' },
+    { value: t(lang, 'whyUs.stats.awards.value'), label: t(lang, 'whyUs.stats.awards.label'), icon: '🏆' },
+    { value: t(lang, 'whyUs.stats.experience.value'), label: t(lang, 'whyUs.stats.experience.label'), icon: '💼' },
+  ];
+}
 
-const features = [
-  {
-    title: 'Performance First',
-    description: 'Every website we build scores 95+ on Google PageSpeed Insights. Fast sites convert better and rank higher.',
-    metric: '95+',
-    metricLabel: 'PageSpeed Score',
-  },
-  {
-    title: 'Conversion Optimized',
-    description: 'Data-driven design decisions based on user behavior analytics and A/B testing for maximum ROI.',
-    metric: '3x',
-    metricLabel: 'Average ROI Increase',
-  },
-  {
-    title: 'AI-Ready Architecture',
-    description: 'Structured data, schema markup, and semantic HTML for maximum AI visibility and AEO optimization.',
-    metric: '100%',
-    metricLabel: 'Schema Compliance',
-  },
-  {
-    title: 'Ongoing Support',
-    description: 'Dedicated account manager, 24/7 monitoring, and priority support to keep your site running smoothly.',
-    metric: '24/7',
-    metricLabel: 'Support Available',
-  },
-];
+function getFeatures(lang: 'tr' | 'en') {
+  return [
+    { title: t(lang, 'whyUs.features.performance.title'), description: t(lang, 'whyUs.features.performance.desc'), metric: t(lang, 'whyUs.features.performance.metric'), metricLabel: t(lang, 'whyUs.features.performance.metricLabel') },
+    { title: t(lang, 'whyUs.features.conversion.title'), description: t(lang, 'whyUs.features.conversion.desc'), metric: t(lang, 'whyUs.features.conversion.metric'), metricLabel: t(lang, 'whyUs.features.conversion.metricLabel') },
+    { title: t(lang, 'whyUs.features.ai.title'), description: t(lang, 'whyUs.features.ai.desc'), metric: t(lang, 'whyUs.features.ai.metric'), metricLabel: t(lang, 'whyUs.features.ai.metricLabel') },
+    { title: t(lang, 'whyUs.features.support.title'), description: t(lang, 'whyUs.features.support.desc'), metric: t(lang, 'whyUs.features.support.metric'), metricLabel: t(lang, 'whyUs.features.support.metricLabel') },
+  ];
+}
 
 export default function WhyChooseUs() {
+  const lang = useLanguage();
+  const stats = getStats(lang);
+  const features = getFeatures(lang);
+
   return (
     <section className="py-24 bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,14 +61,14 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mb-4">
-            Why Choose Us
+            {t(lang, 'whyUs.badge')}
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            What Makes Us
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Different</span>
+            {t(lang, 'whyUs.title1')}
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> {t(lang, 'whyUs.title2')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We combine technical excellence with strategic thinking to deliver websites that don't just look great—they perform.
+            {t(lang, 'whyUs.description')}
           </p>
         </motion.div>
 
