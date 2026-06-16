@@ -55,18 +55,18 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
                 <MapPinIcon className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <span className="text-sm">Example Street, No: 123, Istanbul, Turkey</span>
+                <span className="text-sm">Arslanbucak Mah. Karanfil Cad. No 14/B Kemer, Antalya, Türkiye</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <PhoneIcon className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="tel:+905551234567" className="text-sm hover:text-primary-400 transition-colors">
-                  +90 555 123 4567
+                <a href="tel:+905312760791" className="text-sm hover:text-primary-400 transition-colors">
+                  +90 531 276 0791
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <EnvelopeIcon className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="mailto:info@dijitalv3.com" className="text-sm hover:text-primary-400 transition-colors">
-                  info@dijitalv3.com
+                <a href="mailto:kaksoy@gmail.com" className="text-sm hover:text-primary-400 transition-colors">
+                  kaksoy@gmail.com
                 </a>
               </div>
             </div>
