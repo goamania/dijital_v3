@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Sektörler | Dijital V3',
-  description: 'E-ticaret, sağlık, emlak ve restoran sektörlerine özel web tasarım ve dijital çözümler.',
+  description: 'E-ticaret, sağlık, emlak, restoran ve seyahat acentalarına özel web tasarım ve dijital çözümler.',
   alternates: { canonical: 'https://www.dijitalv3.com/sektorler' },
 };
 
@@ -12,6 +12,7 @@ const sektorler = [
   { href: '/sektorler/saglik', title: 'Sağlık', desc: 'Hasta portalları, randevu sistemleri ve medikal web siteleri.', icon: '🏥' },
   { href: '/sektorler/emlak', title: 'Emlak', desc: 'Gayrimenkul listeleme, sanal tur ve emlak yönetim platformları.', icon: '🏠' },
   { href: '/sektorler/restoran', title: 'Restoran', desc: 'Online sipariş, rezervasyon ve dijital menü çözümleri.', icon: '🍽️' },
+  { href: '/sektorler/seyahat-acentalari', title: 'Seyahat Acentaları', desc: 'Tur paketleri, online rezervasyon ve çok dilli seyahat platformları.', icon: '✈️' },
 ];
 
 export default function SektorlerPage() {

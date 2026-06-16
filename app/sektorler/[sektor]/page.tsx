@@ -25,6 +25,12 @@ const meta: Record<string, { title: string; desc: string; content: string; items
     content: 'Restoran işletmelerine özel dijital menü, online sipariş ve masa rezervasyon sistemleriyle müşteri deneyimini iyileştiriyoruz.',
     items: ['Online sipariş sistemi', 'Masa rezervasyonu', 'Dijital menü (QR)', 'Paket servis yönetimi', 'Sadakat programı entegrasyonu'],
   },
+  'seyahat-acentalari': {
+    title: 'Seyahat Acentaları | Dijital V3',
+    desc: 'Seyahat acentaları için online rezervasyon, tur paketi yönetimi ve çok dilli web platformları.',
+    content: 'Seyahat acentalarına özel; tur paketi yönetimi, online rezervasyon, ödeme entegrasyonu ve çok dilli destek sunan kapsamlı web çözümleri geliştiriyoruz. Define Tours ve Kemer Car Rental gibi başarılı projelerimizle seyahat sektöründe kanıtlanmış deneyime sahibiz.',
+    items: ['Online rezervasyon sistemi', 'Tur paketi yönetimi', 'Çoklu dil desteği (TR, EN, DE, RU)', 'Online ödeme entegrasyonu', 'Canlı destek ve WhatsApp entegrasyonu', 'SEO ve Google Haritalar optimizasyonu'],
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ sektor: string }> }) {
