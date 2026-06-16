@@ -17,6 +17,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.dijitalv3.com'),
   title: {
     default: "Dijital V3 | Premium Web Design & Digital Agency",
     template: "%s | Dijital V3",
@@ -93,20 +94,20 @@ export default function RootLayout({
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Example Street, No: 123",
-      addressLocality: "Istanbul",
-      addressRegion: "Istanbul",
-      postalCode: "34000",
+      streetAddress: "Arslanbucak Mah. Karanfil Cad. No 14/B",
+      addressLocality: "Kemer",
+      addressRegion: "Antalya",
+      postalCode: "07980",
       addressCountry: "TR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 41.0082,
-      longitude: 28.9784,
+      latitude: 36.6016,
+      longitude: 30.5597,
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+90-555-123-4567",
+      telephone: "+90-531-276-0791",
       contactType: "customer service",
       availableLanguage: ["Turkish", "English"],
     },

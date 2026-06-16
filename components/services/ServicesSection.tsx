@@ -8,6 +8,7 @@ import {
   PaintBrushIcon,
   MegaphoneIcon,
   WrenchScrewdriverIcon,
+  CommandLineIcon,
 } from '@heroicons/react/24/outline';
 
 const services = [
@@ -15,7 +16,7 @@ const services = [
     icon: ComputerDesktopIcon,
     title: 'Custom Website Design',
     description: 'Bespoke, high-converting websites tailored to your brand and business goals.',
-    features: ['Responsive Design', 'Performance Optimized', 'SEO Ready'],
+    features: ['Next.js & React', 'Tailwind CSS', 'Responsive Design', 'Performance Optimized', 'SEO Ready'],
     href: '/services/web-design',
   },
   {
@@ -53,6 +54,13 @@ const services = [
     features: ['Security Updates', 'Daily Backups', '24/7 Monitoring'],
     href: '/services/maintenance',
   },
+  {
+    icon: CommandLineIcon,
+    title: 'Modern Tech Stack',
+    description: 'Built with cutting-edge technologies for blazing-fast, scalable, and maintainable web applications.',
+    features: ['Next.js 14+', 'React 18', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+    href: '/services/tech-stack',
+  },
 ];
 
 const containerVariants = {
@@ -68,7 +76,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: 'easeOut' as const },
   },
 };
 
