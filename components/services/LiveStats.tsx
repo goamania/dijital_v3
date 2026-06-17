@@ -13,12 +13,14 @@ import { useLanguage } from '@/lib/i18n-context';
  */
 
 function AnimatedCounter({ end, suffix = '', duration = 2 }: { end: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end); // Varsayılan: son değer (0 gösterme)
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   useEffect(() => {
     if (!isInView) return;
+    // Animasyon: 0'dan başla, end'e ulaş
+    setCount(0);
     let start = 0;
     const increment = end / (duration * 60);
     const timer = setInterval(() => {
@@ -47,7 +49,7 @@ export default function LiveStats() {
   const stats = [
     { end: 150, suffix: '+', label: isTr ? 'Proje Teslim Edildi' : 'Projects Delivered', icon: '🚀' },
     { end: 98, suffix: '%', label: isTr ? 'Müşteri Memnuniyeti' : 'Client Satisfaction', icon: '⭐' },
-    { end: 6, suffix: '+', label: isTr ? 'Yıllık Deneyim' : 'Years Experience', icon: '💼' },
+    { end: 6, suffix: '+', label: isTr ? 'Yıl Ajans Deneyimi' : 'Years Agency Experience', icon: '💼' },
     { end: 12, suffix: '+', label: isTr ? 'Sektör Ödülü' : 'Industry Awards', icon: '🏆' },
   ];
 

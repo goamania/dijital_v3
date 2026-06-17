@@ -101,7 +101,7 @@ export default function BeforeAfterSlider() {
               alt="Define Tours yeni web sitesi, 2026 Next.js"
               fill
               className="object-cover"
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               priority
             />
             <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg z-10">
@@ -116,10 +116,10 @@ export default function BeforeAfterSlider() {
           >
             <Image
               src="/photos/definetours-2025.webp"
-              alt="Define Tours eski PHP web sitesi — 2025"
+              alt="Define Tours eski PHP web sitesi, 2025"
               fill
               className="object-cover"
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, 1024px"
             />
             <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg z-10">
               {isTr ? '2022 — ESKİ PHP' : '2022 — OLD PHP'}

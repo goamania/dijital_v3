@@ -13,7 +13,6 @@ import ProcessTimeline from '@/components/services/ProcessTimeline';
 import PricingSection from '@/components/services/PricingSection';
 import PriceCalculator from '@/components/services/PriceCalculator';
 import PortfolioSection from '@/components/services/PortfolioSection';
-import TestimonialsSection from '@/components/services/TestimonialsSection';
 import FAQSection from '@/components/services/FAQSection';
 import TrustBadges from '@/components/services/TrustBadges';
 import AuthorBox from '@/components/services/AuthorBox';
@@ -38,7 +37,6 @@ export default function HomePage() {
       <PricingSection />
       <PriceCalculator />
       <PortfolioSection />
-      <TestimonialsSection />
       <FAQSection />
       <TrustBadges />
       <AuthorBox />

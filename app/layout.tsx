@@ -28,11 +28,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dijitalv3.com'),
   title: {
-    default: "Dijital V3 | Web Tasarım, SEO ve Dijital Dönüşüm Stüdyosu",
+    default: "Dijital V3 | Next.js, AIO, GEO, AEO Uyumlu Dijital Mimari",
     template: "%s | Dijital V3",
   },
-  description: "Türkiye'den dünyaya: turizm, e-ticaret, sağlık, emlak ve tüm sektörlere web tasarım, SEO, yapay zeka optimizasyonu. Akdeniz turizminde kanıtlanmış uzmanlık, küresel ölçekte dijital çözümler.",
-  keywords: ["web tasarım", "SEO", "dijital dönüşüm", "Next.js", "turizm web sitesi", "otel web sitesi", "e-ticaret", "yapay zeka optimizasyonu", "GEO", "AEO", "Antalya", "İstanbul", "Türkiye"],
+  description: "Define Tours operasyonu ve Commodore 64'ten gelen 20 yılı aşkın tecrübe. 95+ PageSpeed, Arama Motoru Optimizasyonu (SEO), Yapay Zeka Optimizasyonu (AIO), Üretken Motor (GEO) ve Yanıt Motoru (AEO) optimizasyonu. Akdeniz turizmini içeriden bilen teknoloji stüdyosu.",
+  keywords: ["Next.js", "AIO", "GEO", "AEO", "SEO", "web tasarım", "turizm web sitesi", "Antalya", "yapay zeka optimizasyonu", "95 PageSpeed"],
   authors: [{ name: "Dijital V3 Ajans" }],
   creator: "Dijital V3",
   publisher: "Dijital V3 Ajans",

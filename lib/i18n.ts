@@ -289,35 +289,35 @@ export const translations = {
     items: [
       {
         q: { tr: 'Profesyonel bir web sitesi ne kadar tutar?', en: 'How much does a professional website cost?' },
-        a: { tr: 'Özel web tasarım paketlerimiz 15.000 TL\'den başlar ve karmaşıklığa, özelliklere ve gereksinimlere göre değişir. E-ticaret çözümleri 25.000 TL\'den başlar. İhtiyaçlarınızı ve hedeflerinizi anladığımız ilk görüşme sonrası detaylı fiyat teklifi sunuyoruz.', en: 'Our custom website design packages start from 15,000 TRY and vary based on complexity, features, and requirements. E-commerce solutions start from 25,000 TRY. We provide detailed quotes after an initial consultation where we understand your specific needs and goals.' },
+        a: { tr: 'Her proje ihtiyaca özel fiyatlandırılır. İlk görüşmede ihtiyaçlarınızı ve hedeflerinizi anlıyor, size özel detaylı fiyat teklifi sunuyoruz. Net ve şeffaf tekliflendirme yapıyor, sürpriz maliyet çıkarmıyoruz.', en: 'Each project is priced individually. We understand your needs and goals in the first meeting and provide a detailed custom quote. Transparent pricing, no hidden costs.' },
       },
       {
         q: { tr: 'Web sitesi yapımı ne kadar sürer?', en: 'How long does it take to build a website?' },
-        a: { tr: 'Standart kurumsal web siteleri için 4-8 hafta, karmaşık e-ticaret platformları için 8-12 hafta arası proje süreleri. Her aşamada kalite ve kapsamlı teste öncelik veriyoruz. Acil projeler ek ücretle hızlandırılabilir.', en: 'Typical project timelines range from 4-8 weeks for standard business websites and 8-12 weeks for complex e-commerce platforms. We prioritize quality and thorough testing at each stage. Rush projects can be accommodated with a premium fee.' },
+        a: { tr: 'Standart kurumsal web siteleri 4-8 hafta, kapsamlı platformlar 8-12 hafta arası tamamlanır. Her aşamada kalite ve kapsamlı teste öncelik veriyoruz.', en: 'Standard business websites take 4-8 weeks, comprehensive platforms 8-12 weeks. We prioritize quality and thorough testing at each stage.' },
       },
       {
-        q: { tr: 'SEO optimizasyonu yapıyor musunuz?', en: 'Do you provide SEO optimization?' },
-        a: { tr: 'Evet, tüm web sitelerimiz teknik SEO, sayfa içi optimizasyon, schema markup ve performans optimizasyonu dahil temel SEO ile gelir. Ayrıca sürekli optimizasyon, içerik stratejisi ve link inşası için gelişmiş SEO paketleri sunuyoruz.', en: 'Yes, all our websites come with foundational SEO optimization including technical SEO, on-page optimization, schema markup, and performance optimization. We also offer advanced SEO packages for ongoing optimization, content strategy, and link building.' },
+        q: { tr: 'Arama motoru ve yapay zeka optimizasyonu yapıyor musunuz?', en: 'Do you provide search and AI optimization?' },
+        a: { tr: 'Evet, tüm projelerimiz teknik SEO, yapılandırılmış veri ve performans optimizasyonu ile gelir. Ayrıca gelişmiş SEO, Üretken Motor (GEO) ve Yanıt Motoru (AEO) optimizasyon paketleri sunuyoruz.', en: 'Yes, all projects come with technical SEO, structured data, and performance optimization. We also offer advanced SEO, Generative Engine (GEO), and Answer Engine (AEO) optimization packages.' },
       },
       {
         q: { tr: 'Sürekli bakım ve destek sunuyor musunuz?', en: 'Do you offer ongoing maintenance and support?' },
-        a: { tr: 'Kesinlikle! Güvenlik güncellemeleri, yedekleme, performans izleme, içerik güncellemeleri ve öncelikli destek içeren aylık bakım paketleri sunuyoruz. Paketler aylık 2.000 TL\'den başlar.', en: 'Absolutely! We offer monthly maintenance packages that include security updates, backups, performance monitoring, content updates, and priority support to keep your website running smoothly. Plans start from 2,000 TRY/month.' },
+        a: { tr: 'Kesinlikle. Güvenlik güncellemeleri, yedekleme, performans izleme ve içerik güncellemeleri içeren aylık bakım paketlerimiz var. İhtiyacınıza göre özelleştirilmiş destek planları sunuyoruz.', en: 'Absolutely. We offer monthly maintenance packages including security updates, backups, performance monitoring, and content updates. Customized support plans available based on your needs.' },
       },
       {
-        q: { tr: 'Site yayına alındıktan sonra kendim güncelleyebilir miyim?', en: 'Can I update the website myself after it\'s launched?' },
-        a: { tr: 'Evet! Tüm web sitelerimizi kullanıcı dostu içerik yönetim sistemleri (CMS) ile geliştiriyoruz. Ekibinizin içerik güncelleyebilmesi, blog yazısı ekleyebilmesi ve ürün yönetebilmesi için kapsamlı eğitim ve dokümantasyon sağlıyoruz. Daha karmaşık değişiklikler için her zaman buradayız.', en: 'Yes! We build all our websites with user-friendly content management systems (CMS). We provide comprehensive training and documentation so your team can easily update content, add blog posts, and manage products. Of course, we\'re always here for more complex changes.' },
+        q: { tr: 'Site yayına alındıktan sonra kendim güncelleyebilir miyim?', en: 'Can I update the website myself after launch?' },
+        a: { tr: 'Evet. Tüm projelerimizi kullanıcı dostu içerik yönetim sistemi ile teslim ediyoruz. Ekibinizin içerik güncelleyebilmesi için kapsamlı eğitim ve dokümantasyon sağlıyoruz.', en: 'Yes. All projects are delivered with a user-friendly content management system. We provide comprehensive training and documentation so your team can easily manage content.' },
       },
       {
         q: { tr: 'Hangi teknolojileri kullanıyorsunuz?', en: 'What technologies do you use?' },
-        a: { tr: 'Next.js, React, Tailwind CSS gibi modern ve performanslı teknolojiler ile Sanity ve Contentful gibi headless CMS platformları kullanıyoruz. E-ticaret için ihtiyacınıza göre Shopify, WooCommerce ve özel çözümlerle çalışıyoruz.', en: 'We use modern, performant technologies including Next.js, React, Tailwind CSS, and headless CMS platforms like Sanity and Contentful. For e-commerce, we work with Shopify, WooCommerce, and custom solutions depending on your needs.' },
+        a: { tr: 'Next.js, React, TypeScript ve Tailwind CSS başta olmak üzere modern ve performans odaklı teknolojiler kullanıyoruz. Backend tarafında .NET Core, PHP ve SQL veritabanları ile çalışıyoruz.', en: 'We use modern, performance-focused technologies including Next.js, React, TypeScript, and Tailwind CSS. On the backend, we work with .NET Core, PHP, and SQL databases.' },
       },
       {
-        q: { tr: 'Türkiye dışındaki müşterilerle çalışıyor musunuz?', en: 'Do you work with clients outside of Turkey?' },
-        a: { tr: 'Evet! Antalya/Kemer merkezli olmamıza rağmen global müşterilerle çalışıyoruz. Konumunuz nerede olursa olsun, modern uzaktan çalışma sürecimiz sorunsuz iletişim ve proje teslimatı sağlar. Avrupa, Orta Doğu ve Kuzey Amerika\'daki müşterilere başarıyla projeler teslim ettik.', en: 'Yes! While we\'re based in Antalya/Kemer, we work with clients globally. Our streamlined remote process ensures smooth communication and project delivery regardless of your location. We\'ve successfully delivered projects for clients in Europe, Middle East, and North America.' },
+        q: { tr: 'Türkiye dışındaki müşterilerle çalışıyor musunuz?', en: 'Do you work with clients outside Turkey?' },
+        a: { tr: 'Evet, Antalya merkezli olmamıza rağmen global müşterilerle çalışıyoruz. Modern uzaktan çalışma sürecimiz, konumunuz nerede olursa olsun sorunsuz iletişim ve proje teslimatı sağlar.', en: 'Yes, while based in Antalya, we work with clients globally. Our modern remote process ensures smooth communication and project delivery regardless of location.' },
       },
       {
         q: { tr: 'Tasarım süreciniz nasıl işliyor?', en: 'What is your design process?' },
-        a: { tr: 'Sürecimiz: 1) Keşif & Strateji - hedeflerinizi ve kitlenizi anlama, 2) Wireframe - kullanıcı yolculuğunu planlama, 3) Tasarım - görsel maket ve prototipler, 4) Geliştirme - temiz, performanslı kod, 5) Test - cihazlar arası kapsamlı QA, 6) Lansman & Optimizasyon - yayına alma ve sürekli iyileştirme.', en: 'Our process includes: 1) Discovery & Strategy - understanding your goals and audience, 2) Wireframing - planning the user journey, 3) Design - creating visual mockups and prototypes, 4) Development - building with clean, performant code, 5) Testing - rigorous QA across devices, 6) Launch & Optimization - going live and continuous improvement.' },
+        a: { tr: 'Sürecimiz 6 adımdan oluşur: 1) Keşif ve Strateji, 2) Wireframe ve Planlama, 3) Tasarım ve Prototip, 4) Geliştirme, 5) Test ve Kalite Kontrol, 6) Lansman ve Optimizasyon.', en: 'Our process has 6 steps: 1) Discovery and Strategy, 2) Wireframing and Planning, 3) Design and Prototype, 4) Development, 5) Testing and QA, 6) Launch and Optimization.' },
       },
     ],
   },
@@ -374,8 +374,8 @@ export const translations = {
   // ── Footer ──
   footer: {
     description: {
-      tr: 'Dijital mükemmellik yaratan ödüllü web tasarım ajansı. Vizyonunuzu çarpıcı, yüksek dönüşümlü web sitelerine dönüştürüyoruz.',
-      en: 'Award-winning web design agency creating digital excellence. We transform your vision into stunning, high-converting websites.',
+      tr: 'Next.js ve yapay zeka optimizasyonu ile işletmenize satış getiren dijital sistemler kuruyoruz. Akdeniz turizmini içeriden biliyor, küresel ölçekte hizmet veriyoruz.',
+      en: 'We build digital systems that bring sales to your business with Next.js and AI optimization. We know Mediterranean tourism from the inside, serving globally.',
     },
     services: { tr: 'Hizmetler', en: 'Services' },
     industries: { tr: 'Sektörler', en: 'Industries' },
