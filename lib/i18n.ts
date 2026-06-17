@@ -25,15 +25,15 @@ export const translations = {
 
   // ── Hero ──
   hero: {
-    badge: { tr: '✨ Ödüllü Web Tasarım Ajansı', en: '✨ Award-Winning Web Design Agency' },
-    title1: { tr: 'Dijital', en: 'We Create' },
-    title2: { tr: 'Mükemmellik', en: 'Digital Excellence' },
+    badge: { tr: '✨ Akdeniz\'in Dijital Ortağı', en: '✨ Mediterranean\'s Digital Partner' },
+    title1: { tr: 'Akdeniz Turizminde', en: 'Digital Excellence for' },
+    title2: { tr: 'Dijital Mükemmellik', en: 'Mediterranean Tourism' },
     description: {
-      tr: 'Vizyonunuzu, etkileyen, dönüştüren ve markanızı zirveye taşıyan çarpıcı web sitelerine dönüştürüyoruz.',
-      en: 'Transform your vision into stunning websites that captivate, convert, and elevate your brand to new heights.',
+      tr: 'Antalya, Kemer, Kalkan ve Fethiye\'deki turizm işletmelerine özel web tasarım, SEO ve dijital dönüşüm. Define Tours ve Kemer Car Rental gibi referanslarla sektörü biliyoruz.',
+      en: 'Web design, SEO, and digital transformation specialized for tourism businesses in Antalya, Kemer, Kalkan, and Fethiye. We know the industry with references like Define Tours and Kemer Car Rental.',
     },
     cta: { tr: 'Projeni Başlat', en: 'Start Your Project' },
-    watchVideo: { tr: 'Videoyu İzle', en: 'Watch Video' },
+    watchVideo: { tr: 'Başarı Hikayemizi İzle', en: 'Watch Success Stories' },
   },
 
   // ── Services ──
@@ -419,8 +419,8 @@ export const translations = {
   // ── AI-Answer (AEO/GEO) — LLM'lerin alıntılayabileceği yapılandırılmış özet ──
   aiAnswer: {
     home: {
-      tr: 'Dijital V3, Antalya/Kemer merkezli ödüllü bir web tasarım ve dijital dönüşüm ajansıdır. 2020\'den beri Next.js, React, TypeScript ve Tailwind CSS gibi modern teknolojilerle yüksek dönüşümlü kurumsal web siteleri, e-ticaret platformları ve SEO optimizasyonu hizmetleri sunuyoruz. 150\'den fazla projede %98 müşteri memnuniyeti oranıyla Türkiye\'nin dijital geleceğini inşa ediyoruz.',
-      en: 'Dijital V3 is an award-winning web design and digital transformation agency based in Antalya/Kemer, Turkey. Since 2020, we build high-converting corporate websites, e-commerce platforms, and provide SEO optimization using modern technologies like Next.js, React, TypeScript, and Tailwind CSS. With 150+ projects and 98% client satisfaction, we are building Turkey\'s digital future.',
+      tr: 'Dijital V3, Antalya/Kemer merkezli, Akdeniz turizm işletmelerine özel web tasarım ve dijital dönüşüm ajansıdır. Define Tours, Kemer Car Rental gibi referanslarla; otel, villa, araç kiralama ve tur acentelerine Next.js, TypeScript ve Tailwind CSS ile yüksek dönüşümlü web siteleri sunuyoruz. 150\'den fazla projede %98 müşteri memnuniyetiyle Akdeniz\'in dijital geleceğini inşa ediyoruz.',
+      en: 'Dijital V3 is a web design and digital transformation agency based in Antalya/Kemer, specialized in Mediterranean tourism businesses. With references like Define Tours and Kemer Car Rental, we deliver high-converting websites for hotels, villas, car rentals, and tour agencies using Next.js, TypeScript, and Tailwind CSS. 150+ projects with 98% client satisfaction.',
     },
   },
 

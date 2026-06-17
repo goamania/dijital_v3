@@ -66,7 +66,7 @@ export default function PortfolioSection() {
   const projects = getProjects(lang);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -75,14 +75,14 @@ export default function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-4">
             {t(lang, 'portfolio.badge')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4">
             {t(lang, 'portfolio.title1')}
             <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'portfolio.title2')}</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             {t(lang, 'portfolio.description')}
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export default function PortfolioSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Tıklanabilir link overlay (gerçek projeler için) */}
               {'url' in project && project.url && (
@@ -125,7 +125,7 @@ export default function PortfolioSection() {
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-slate-900">
+                  <span className="px-3 py-1 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-full text-sm font-semibold text-slate-900 dark:text-white">
                     {project.category}
                   </span>
                 </div>
@@ -134,7 +134,7 @@ export default function PortfolioSection() {
               {/* Content */}
               <div className="p-8">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary-600 transition-colors">
                     {project.title}
                   </h3>
                   {'url' in project && project.url && (
@@ -143,16 +143,16 @@ export default function PortfolioSection() {
                     </span>
                   )}
                 </div>
-                <p className="text-slate-600 mb-6">
+                <p className="text-slate-600 dark:text-slate-400 mb-6">
                   {project.description}
                 </p>
 
                 {/* Metrics */}
                 <div className="grid grid-cols-3 gap-4">
                   {Object.entries(project.metrics).map(([key, value]) => (
-                    <div key={key} className="text-center p-3 bg-slate-50 rounded-lg">
+                    <div key={key} className="text-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
                       <div className="text-xl font-bold text-primary-600">{value}</div>
-                      <div className="text-xs text-slate-500 capitalize">{key}</div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 capitalize">{key}</div>
                     </div>
                   ))}
                 </div>
