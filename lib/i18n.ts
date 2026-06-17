@@ -25,15 +25,15 @@ export const translations = {
 
   // ── Hero ──
   hero: {
-    badge: { tr: '✨ Akdeniz\'in Dijital Ortağı', en: '✨ Mediterranean\'s Digital Partner' },
-    title1: { tr: 'Akdeniz Turizminde', en: 'Digital Excellence for' },
-    title2: { tr: 'Dijital Mükemmellik', en: 'Mediterranean Tourism' },
+    badge: { tr: '✨ Küresel Dijital Dönüşüm Ortağınız', en: '✨ Your Global Digital Transformation Partner' },
+    title1: { tr: 'Sınırları Aşan', en: 'Digital Excellence' },
+    title2: { tr: 'Dijital Mükemmellik', en: 'Without Borders' },
     description: {
-      tr: 'Antalya, Kemer, Kalkan ve Fethiye\'deki turizm işletmelerine özel web tasarım, SEO ve dijital dönüşüm. Define Tours ve Kemer Car Rental gibi referanslarla sektörü biliyoruz.',
-      en: 'Web design, SEO, and digital transformation specialized for tourism businesses in Antalya, Kemer, Kalkan, and Fethiye. We know the industry with references like Define Tours and Kemer Car Rental.',
+      tr: 'Türkiye\'den dünyaya: turizm, e-ticaret, sağlık, emlak ve tüm sektörlere özel web tasarım, SEO ve dijital dönüşüm. Akdeniz turizmini avucumuzun içi gibi biliyor, bu bilgiyi küresel ölçekte işletmenize avantaja çeviriyoruz.',
+      en: 'From Turkey to the world: web design, SEO, and digital transformation for tourism, e-commerce, healthcare, real estate, and all sectors. We know Mediterranean tourism inside out and turn this expertise into global advantage for your business.',
     },
     cta: { tr: 'Projeni Başlat', en: 'Start Your Project' },
-    watchVideo: { tr: 'Başarı Hikayemizi İzle', en: 'Watch Success Stories' },
+    watchVideo: { tr: 'Başarı Hikayelerimizi İzle', en: 'Watch Success Stories' },
   },
 
   // ── Services ──
@@ -419,8 +419,8 @@ export const translations = {
   // ── AI-Answer (AEO/GEO) — LLM'lerin alıntılayabileceği yapılandırılmış özet ──
   aiAnswer: {
     home: {
-      tr: 'Dijital V3, Antalya/Kemer merkezli, Akdeniz turizm işletmelerine özel web tasarım ve dijital dönüşüm ajansıdır. Define Tours, Kemer Car Rental gibi referanslarla; otel, villa, araç kiralama ve tur acentelerine Next.js, TypeScript ve Tailwind CSS ile yüksek dönüşümlü web siteleri sunuyoruz. 150\'den fazla projede %98 müşteri memnuniyetiyle Akdeniz\'in dijital geleceğini inşa ediyoruz.',
-      en: 'Dijital V3 is a web design and digital transformation agency based in Antalya/Kemer, specialized in Mediterranean tourism businesses. With references like Define Tours and Kemer Car Rental, we deliver high-converting websites for hotels, villas, car rentals, and tour agencies using Next.js, TypeScript, and Tailwind CSS. 150+ projects with 98% client satisfaction.',
+      tr: 'Dijital V3, Antalya merkezli, Türkiye ve dünya genelinde hizmet veren bir web tasarım ve dijital dönüşüm stüdyosudur. Turizm, e-ticaret, sağlık, emlak, restoran ve tüm sektörlerde; Next.js, TypeScript ve Tailwind CSS ile yüksek dönüşümlü, yapay zeka uyumlu web siteleri sunuyoruz. Akdeniz turizmini avucumuzun içi gibi biliyor, bu derin sektör bilgisini küresel ölçekte müşterilerimize avantaja çeviriyoruz.',
+      en: 'Dijital V3 is an Antalya-based web design and digital transformation studio serving Turkey and worldwide. We deliver high-conversion, AI-ready websites for tourism, e-commerce, healthcare, real estate, restaurants, and all sectors using Next.js, TypeScript, and Tailwind CSS. We know Mediterranean tourism inside out and turn this deep industry knowledge into global advantage for our clients.',
     },
   },
 
@@ -459,30 +459,30 @@ export const translations = {
     },
     plans: {
       starter: {
-        name: { tr: 'Başlangıç', en: 'Starter' },
-        desc: { tr: 'Dijital varlığınızı modern altyapıyla başlatmak için.', en: 'Launch your digital presence with modern infrastructure.' },
+        name: { tr: 'Dijital Vitrin', en: 'Digital Storefront' },
+        desc: { tr: 'Turizm işletmenizin modern, hızlı ve güven veren dijital yüzü. Mobilde ve masaüstünde kusursuz.', en: 'A modern, fast, and trustworthy digital face for your tourism business. Flawless on mobile and desktop.' },
         price: { tr: '25.000', en: '750' },
         features: {
-          tr: ['5 Sayfaya Kadar', 'Mobil ve Performans Odaklı Altyapı', 'Next.js + Tailwind CSS', 'Temel SEO', 'İletişim Formu', 'Sosyal Medya Entegrasyonu'],
-          en: ['Up to 5 Pages', 'Mobile & Performance Optimized', 'Next.js + Tailwind CSS', 'Basic SEO', 'Contact Form', 'Social Media Integration'],
+          tr: ['5 Sayfaya Kadar Özel Tasarım', 'Next.js ve Tailwind CSS ile Ultra Hızlı', 'Mobil ve Masaüstü Kusursuz Uyum', 'Temel Arama Motoru Optimizasyonu (SEO)', 'İletişim ve Teklif Formu', 'Sosyal Medya Entegrasyonu'],
+          en: ['Up to 5 Custom Pages', 'Next.js and Tailwind CSS, Ultra Fast', 'Flawless Mobile and Desktop', 'Basic Search Engine Optimization (SEO)', 'Contact and Inquiry Form', 'Social Media Integration'],
         },
       },
       professional: {
-        name: { tr: 'Profesyonel', en: 'Professional' },
-        desc: { tr: 'Büyüyen işletmeler için GEO ve AEO entegrasyonlu çözüm.', en: 'GEO and AEO integrated solution for growing businesses.' },
+        name: { tr: 'Rezervasyon ve Dönüşüm Sistemi', en: 'Booking and Conversion System' },
+        desc: { tr: 'Müşteri getiren, rezervasyon alan, Google\'da ve yapay zeka asistanlarında sizi öne çıkaran tam sistem.', en: 'A complete system that brings customers, takes bookings, and puts you ahead on Google and AI assistants.' },
         price: { tr: '55.000', en: '1,650' },
         features: {
-          tr: ['10 Sayfaya Kadar', 'Özel Tasarım', 'Gelişmiş SEO + GEO + AEO Paketi', 'İçerik Yönetim Sistemi', 'Blog Altyapısı', 'Analitik Entegrasyonu', 'Core Web Vitals Optimizasyonu', 'Yapay Zeka Görünürlük (AI Overview)'],
-          en: ['Up to 10 Pages', 'Custom Design', 'Advanced SEO + GEO + AEO', 'Content Management', 'Blog Setup', 'Analytics Integration', 'Core Web Vitals Optimization', 'AI Overview Visibility'],
+          tr: ['10 Sayfaya Kadar Stratejik Tasarım', 'Gelişmiş SEO, Üretken Motor (GEO) ve Yanıt Motoru (AEO) Optimizasyonu', 'Çok Dilli Altyapı (TR, EN, DE, RU)', 'Online Rezervasyon ve Ödeme Entegrasyonu', 'İçerik Yönetim Sistemi', 'Blog ve İçerik Pazarlama Altyapısı', 'Core Web Vitals 95+ Optimizasyonu', 'WhatsApp ve Canlı Destek Entegrasyonu'],
+          en: ['Up to 10 Strategic Pages', 'Advanced SEO, Generative Engine (GEO) and Answer Engine (AEO) Optimization', 'Multi-language (TR, EN, DE, RU)', 'Online Booking and Payment Gateway', 'Content Management System', 'Blog and Content Marketing Setup', 'Core Web Vitals 95+ Optimization', 'WhatsApp and Live Chat Integration'],
         },
       },
       enterprise: {
-        name: { tr: 'Kurumsal', en: 'Enterprise' },
-        desc: { tr: 'Tam kapsamlı dijital dönüşüm, e-ticaret ve AI optimizasyonu.', en: 'Full digital transformation, e-commerce, and AI optimization.' },
+        name: { tr: 'Tam Dijital Altyapı', en: 'Full Digital Infrastructure' },
+        desc: { tr: 'Uçtan uca entegre, çok dilli, yapay zeka optimize dijital ekosistem. Filo yönetimi, tur paketleri, emlak listeleme: işiniz ne gerektiriyorsa.', en: 'End-to-end integrated, multi-language, AI-optimized digital ecosystem. Fleet management, tour packages, property listings: whatever your business needs.' },
         price: { tr: '120.000', en: '3,600' },
         features: {
-          tr: ['50 Sayfaya Kadar', 'E-ticaret Altyapısı', 'Ödeme Entegrasyonu (İyzico/PayTR)', 'Çok Dilli Destek (i18n)', 'Özel Yönetici Paneli', 'API Entegrasyonu', '7/24 Öncelikli Destek', 'AI Search Optimizasyonu (GEO + AEO + AIO)'],
-          en: ['Up to 50 Pages', 'E-commerce Ready', 'Payment Gateway', 'Multi-language (i18n)', 'Custom Admin Panel', 'API Integration', '24/7 Priority Support', 'AI Search Optimization (GEO + AEO + AIO)'],
+          tr: ['50 Sayfaya Kadar Tam Kapsamlı', 'Özel Rezervasyon, Filo ve Tur Yönetim Paneli', 'Gelişmiş Ödeme Sistemleri (İyzico, PayTR)', 'Çok Dilli ve Çok Para Birimli (i18n)', 'API Entegrasyonu (CRM, Kanal Yöneticisi)', 'Yapay Zeka Arama Optimizasyonu (GEO, AEO, AIO)', '7/24 Öncelikli Teknik Destek', 'Performans Danışmanlığı ve Aylık Raporlama'],
+          en: ['Up to 50 Pages Full Scope', 'Custom Booking, Fleet and Tour Dashboard', 'Advanced Payment Systems', 'Multi-language and Multi-currency (i18n)', 'API Integration (CRM, Channel Manager)', 'AI Search Optimization (GEO, AEO, AIO)', '24/7 Priority Technical Support', 'Performance Consulting and Monthly Reports'],
         },
       },
     },

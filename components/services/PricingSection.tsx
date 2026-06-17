@@ -36,20 +36,20 @@ export default function PricingSection() {
     },
   ];
 
-  // Karşılaştırma tablosu satırları — premium konumlandırmaya uygun
+  // Karşılaştırma tablosu satırları
   const comparisonRows = [
     { feature: lang === 'tr' ? 'Sayfa Sayısı' : 'Pages', starter: '5', professional: '10', enterprise: '50' },
-    { feature: lang === 'tr' ? 'Mobil & Performans Odaklı' : 'Mobile & Performance', starter: true, professional: true, enterprise: true },
-    { feature: lang === 'tr' ? 'Temel SEO' : 'Basic SEO', starter: true, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Mobil ve Performans Odaklı' : 'Mobile and Performance', starter: true, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Temel Arama Motoru Optimizasyonu' : 'Basic Search Optimization', starter: true, professional: true, enterprise: true },
     { feature: lang === 'tr' ? 'Özel Tasarım' : 'Custom Design', starter: false, professional: true, enterprise: true },
     { feature: lang === 'tr' ? 'İçerik Yönetim Sistemi' : 'Content Management', starter: false, professional: true, enterprise: true },
     { feature: lang === 'tr' ? 'E-ticaret Altyapısı' : 'E-commerce', starter: false, professional: false, enterprise: true },
     { feature: lang === 'tr' ? 'Ödeme Entegrasyonu' : 'Payment Gateway', starter: false, professional: false, enterprise: true },
-    { feature: lang === 'tr' ? 'Gelişmiş SEO + GEO + AEO' : 'Advanced SEO + GEO + AEO', starter: false, professional: true, enterprise: true },
-    { feature: lang === 'tr' ? 'AI Search Optimizasyonu' : 'AI Search Optimization', starter: false, professional: false, enterprise: true },
-    { feature: lang === 'tr' ? 'Core Web Vitals Optimizasyonu' : 'Core Web Vitals Opt.', starter: false, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Gelişmiş Arama, Üretken ve Yanıt Motoru Optimizasyonu' : 'Advanced Search, Generative and Answer Engine Opt.', starter: false, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Yapay Zeka Arama Optimizasyonu' : 'AI Search Optimization', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Core Web Vitals Optimizasyonu' : 'Core Web Vitals Optimization', starter: false, professional: true, enterprise: true },
     { feature: lang === 'tr' ? 'Çok Dilli Destek' : 'Multi-language', starter: false, professional: false, enterprise: true },
-    { feature: lang === 'tr' ? 'API Entegrasyonu' : 'API Integration', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Uygulama Programlama Arayüzü Entegrasyonu' : 'API Integration', starter: false, professional: false, enterprise: true },
     { feature: lang === 'tr' ? '7/24 Öncelikli Destek' : '24/7 Priority Support', starter: false, professional: false, enterprise: true },
     { feature: lang === 'tr' ? 'Analitik Entegrasyonu' : 'Analytics', starter: false, professional: true, enterprise: true },
   ];
@@ -170,7 +170,7 @@ export default function PricingSection() {
                 <tr className="border-b border-slate-200 dark:border-slate-700">
                   <th className="text-left p-4 font-semibold text-slate-700 dark:text-slate-200 text-sm">{t(lang, 'pricing.comparison.feature')}</th>
                   <th className="p-4 font-semibold text-slate-700 dark:text-slate-200 text-sm text-center">{t(lang, 'pricing.plans.starter.name')}</th>
-                  <th className="p-4 font-semibold text-primary-700 dark:text-primary-300 text-sm text-center bg-primary-50 dark:bg-primary-900/30">{t(lang, 'pricing.plans.professional.name')}</th>
+                  <th className="p-4 font-semibold text-primary-700 dark:text-primary-300 text-sm text-center bg-primary-50 dark:bg-primary-900/30">✨ {t(lang, 'pricing.plans.professional.name')}</th>
                   <th className="p-4 font-semibold text-slate-700 dark:text-slate-200 text-sm text-center">{t(lang, 'pricing.plans.enterprise.name')}</th>
                 </tr>
               </thead>

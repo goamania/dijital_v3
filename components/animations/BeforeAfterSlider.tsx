@@ -74,12 +74,12 @@ export default function BeforeAfterSlider() {
             {isTr ? 'Gerçek Dönüşüm' : 'Real Transformation'}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            {isTr ? 'Define Tours — Eski vs Yeni' : 'Define Tours — Before vs After'}
+            {isTr ? 'Define Tours: Eski vs Yeni' : 'Define Tours: Before vs After'}
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
             {isTr
-              ? 'Sürükle veya kaydır — 2022 PHP site ile 2026 Next.js site arasındaki farkı görün.'
-              : 'Drag or swipe — compare the 2022 PHP site with the 2026 Next.js version.'}
+              ? 'Sürükle veya kaydır. 2022 PHP site ile 2026 Next.js site arasındaki farkı görün.'
+              : 'Drag or swipe. Compare the 2022 PHP site with the 2026 Next.js version.'}
           </p>
         </motion.div>
 
@@ -98,14 +98,14 @@ export default function BeforeAfterSlider() {
           <div className="absolute inset-0">
             <Image
               src="/photos/definetours-2026.webp"
-              alt="Define Tours yeni web sitesi — 2026 Next.js"
+              alt="Define Tours yeni web sitesi, 2026 Next.js"
               fill
               className="object-cover"
               sizes="100vw"
               priority
             />
             <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg z-10">
-              {isTr ? '2026 — YENİ' : '2026 — NEW'}
+              {isTr ? '2026: YENİ' : '2026: NEW'}
             </div>
           </div>
 
