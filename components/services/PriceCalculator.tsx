@@ -155,7 +155,7 @@ export default function PriceCalculator() {
                 step === 'result' ||
                 (s === 'type' && step !== 'type') ||
                 (s === 'pages' && step !== 'type' && step !== 'pages');
-              const isActive = step === s && step !== 'result';
+              const isActive = step === s;
               return (
               <div key={s} className="flex items-center gap-2 flex-1">
                 <div
