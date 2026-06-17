@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next dev",
+    "build": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "start": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=4096' next build"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.2",
@@ -30,6 +30,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.166.0",
     "autoprefixer": "^10.4.19",
+    "cross-env": "^10.1.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.2.9",
     "postcss": "^8.4.39",
