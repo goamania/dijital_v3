@@ -175,7 +175,8 @@ export default function PriceCalculator() {
                 </div>
                 {i < 2 && <div className="flex-1 h-0.5 bg-slate-200 dark:bg-slate-700" />}
               </div>
-            ))}
+              );
+            })}
           </div>
 
           <AnimatePresence mode="wait">
