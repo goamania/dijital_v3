@@ -460,29 +460,29 @@ export const translations = {
     plans: {
       starter: {
         name: { tr: 'Başlangıç', en: 'Starter' },
-        desc: { tr: 'Dijital varlığınızı başlatmak için ideal.', en: 'Perfect to kickstart your digital presence.' },
-        price: { tr: '7.500', en: '1,500' },
+        desc: { tr: 'Dijital varlığınızı modern altyapıyla başlatmak için.', en: 'Launch your digital presence with modern infrastructure.' },
+        price: { tr: '25.000', en: '750' },
         features: {
-          tr: ['5 Sayfaya Kadar', 'Mobil Uyumlu Tasarım', 'Temel SEO', 'İletişim Formu', 'Sosyal Medya Entegrasyonu', '1 Ay Ücretsiz Bakım'],
-          en: ['Up to 5 Pages', 'Responsive Design', 'Basic SEO', 'Contact Form', 'Social Media Integration', '1 Month Free Maintenance'],
+          tr: ['5 Sayfaya Kadar', 'Mobil ve Performans Odaklı Altyapı', 'Next.js + Tailwind CSS', 'Temel SEO', 'İletişim Formu', 'Sosyal Medya Entegrasyonu'],
+          en: ['Up to 5 Pages', 'Mobile & Performance Optimized', 'Next.js + Tailwind CSS', 'Basic SEO', 'Contact Form', 'Social Media Integration'],
         },
       },
       professional: {
         name: { tr: 'Profesyonel', en: 'Professional' },
-        desc: { tr: 'Büyüyen işletmeler için kapsamlı çözüm.', en: 'Comprehensive solution for growing businesses.' },
-        price: { tr: '15.000', en: '3,000' },
+        desc: { tr: 'Büyüyen işletmeler için GEO ve AEO entegrasyonlu çözüm.', en: 'GEO and AEO integrated solution for growing businesses.' },
+        price: { tr: '55.000', en: '1,650' },
         features: {
-          tr: ['10 Sayfaya Kadar', 'Özel Tasarım', 'Gelişmiş SEO Paketi', 'İçerik Yönetim Sistemi', 'Blog Altyapısı', 'Analitik Entegrasyonu', 'Hız Optimizasyonu', '3 Ay Ücretsiz Bakım'],
-          en: ['Up to 10 Pages', 'Custom Design', 'Advanced SEO', 'Content Management', 'Blog Setup', 'Analytics Integration', 'Speed Optimization', '3 Months Free Maintenance'],
+          tr: ['10 Sayfaya Kadar', 'Özel Tasarım', 'Gelişmiş SEO + GEO + AEO Paketi', 'İçerik Yönetim Sistemi', 'Blog Altyapısı', 'Analitik Entegrasyonu', 'Core Web Vitals Optimizasyonu', 'Yapay Zeka Görünürlük (AI Overview)'],
+          en: ['Up to 10 Pages', 'Custom Design', 'Advanced SEO + GEO + AEO', 'Content Management', 'Blog Setup', 'Analytics Integration', 'Core Web Vitals Optimization', 'AI Overview Visibility'],
         },
       },
       enterprise: {
         name: { tr: 'Kurumsal', en: 'Enterprise' },
-        desc: { tr: 'Tam kapsamlı dijital dönüşüm ve e-ticaret.', en: 'Full digital transformation and e-commerce.' },
-        price: { tr: '35.000', en: '7,000' },
+        desc: { tr: 'Tam kapsamlı dijital dönüşüm, e-ticaret ve AI optimizasyonu.', en: 'Full digital transformation, e-commerce, and AI optimization.' },
+        price: { tr: '120.000', en: '3,600' },
         features: {
-          tr: ['Sınırsız Sayfa', 'E-ticaret Altyapısı', 'Ödeme Entegrasyonu', 'Çok Dilli Destek', 'Özel Yönetici Paneli', 'API Entegrasyonu', '7/24 Öncelikli Destek', '12 Ay Ücretsiz Bakım'],
-          en: ['Unlimited Pages', 'E-commerce Ready', 'Payment Gateway', 'Multi-language', 'Custom Admin Panel', 'API Integration', '24/7 Priority Support', '12 Months Free Maintenance'],
+          tr: ['50 Sayfaya Kadar', 'E-ticaret Altyapısı', 'Ödeme Entegrasyonu (İyzico/PayTR)', 'Çok Dilli Destek (i18n)', 'Özel Yönetici Paneli', 'API Entegrasyonu', '7/24 Öncelikli Destek', 'AI Search Optimizasyonu (GEO + AEO + AIO)'],
+          en: ['Up to 50 Pages', 'E-commerce Ready', 'Payment Gateway', 'Multi-language (i18n)', 'Custom Admin Panel', 'API Integration', '24/7 Priority Support', 'AI Search Optimization (GEO + AEO + AIO)'],
         },
       },
     },
@@ -512,14 +512,14 @@ export const translations = {
   // ── Author Box (E-E-A-T Yazar Kutusu) ──
   author: {
     name: { tr: 'Koray Aksoy', en: 'Koray Aksoy' },
-    role: { tr: 'Kurucu & Baş Teknoloji Sorumlusu', en: 'Founder & CTO' },
+    role: { tr: 'Kurucu & Full Stack Geliştirici', en: 'Founder & Full Stack Developer' },
     bio: {
-      tr: '15+ yıllık full-stack geliştirme ve SEO deneyimi. PHP, .NET Core, SQL, Java ve modern JavaScript ekosisteminde uzman. Google Partner ve Microsoft Certified Professional. Dijital V3\'te müşterilere uçtan uca dijital çözümler sunuyor.',
-      en: '15+ years of full-stack development and SEO experience. Expert in PHP, .NET Core, SQL, Java, and modern JavaScript ecosystem. Google Partner and Microsoft Certified Professional. Delivering end-to-end digital solutions at Dijital V3.',
+      tr: 'Yazılım geliştirme ve SEO alanlarındaki deneyimini Akdeniz turizm sektöründe aktif görev alarak birleştiriyor. Define Tours\'ta satış ve dijital operasyonlarda yer alıyor. Next.js, React, TypeScript ve Tailwind CSS ile performans odaklı projeler geliştiriyor.',
+      en: 'Combines software development and SEO expertise with active involvement in Mediterranean tourism. Works in sales and digital operations at Define Tours. Builds performance-focused projects with Next.js, React, TypeScript, and Tailwind CSS.',
     },
     credentials: {
-      tr: ['Google Partner', 'Microsoft Certified', '15+ Yıl Deneyim', '150+ Proje'],
-      en: ['Google Partner', 'Microsoft Certified', '15+ Years Exp.', '150+ Projects'],
+      tr: ['Full Stack Geliştirici', 'SEO Uzmanı', 'Turizm Sektörü Deneyimi', 'Next.js & React'],
+      en: ['Full Stack Developer', 'SEO Expert', 'Tourism Industry Exp.', 'Next.js & React'],
     },
     updatedLabel: { tr: 'Son güncelleme', en: 'Last updated' },
   },

@@ -36,19 +36,22 @@ export default function PricingSection() {
     },
   ];
 
-  // Karşılaştırma tablosu satırları
+  // Karşılaştırma tablosu satırları — premium konumlandırmaya uygun
   const comparisonRows = [
-    { feature: t(lang, 'pricing.features.pages'), starter: '5', professional: '10', enterprise: t(lang, 'pricing.comparison.unlimited') },
-    { feature: t(lang, 'pricing.features.responsive'), starter: true, professional: true, enterprise: true },
-    { feature: t(lang, 'pricing.features.seo'), starter: true, professional: true, enterprise: true },
-    { feature: t(lang, 'pricing.features.cms'), starter: false, professional: true, enterprise: true },
-    { feature: t(lang, 'pricing.features.ecommerce'), starter: false, professional: false, enterprise: true },
-    { feature: t(lang, 'pricing.features.paymentGateway'), starter: false, professional: false, enterprise: true },
-    { feature: t(lang, 'pricing.features.analytics'), starter: false, professional: true, enterprise: true },
-    { feature: t(lang, 'pricing.features.speedOptimization'), starter: false, professional: true, enterprise: true },
-    { feature: t(lang, 'pricing.features.multiLanguage'), starter: false, professional: false, enterprise: true },
-    { feature: t(lang, 'pricing.features.apiIntegration'), starter: false, professional: false, enterprise: true },
-    { feature: t(lang, 'pricing.features.support247'), starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Sayfa Sayısı' : 'Pages', starter: '5', professional: '10', enterprise: '50' },
+    { feature: lang === 'tr' ? 'Mobil & Performans Odaklı' : 'Mobile & Performance', starter: true, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Temel SEO' : 'Basic SEO', starter: true, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Özel Tasarım' : 'Custom Design', starter: false, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'İçerik Yönetim Sistemi' : 'Content Management', starter: false, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'E-ticaret Altyapısı' : 'E-commerce', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Ödeme Entegrasyonu' : 'Payment Gateway', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Gelişmiş SEO + GEO + AEO' : 'Advanced SEO + GEO + AEO', starter: false, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'AI Search Optimizasyonu' : 'AI Search Optimization', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Core Web Vitals Optimizasyonu' : 'Core Web Vitals Opt.', starter: false, professional: true, enterprise: true },
+    { feature: lang === 'tr' ? 'Çok Dilli Destek' : 'Multi-language', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'API Entegrasyonu' : 'API Integration', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? '7/24 Öncelikli Destek' : '24/7 Priority Support', starter: false, professional: false, enterprise: true },
+    { feature: lang === 'tr' ? 'Analitik Entegrasyonu' : 'Analytics', starter: false, professional: true, enterprise: true },
   ];
 
   const CheckOrX = ({ value }: { value: boolean | string }) => {
