@@ -25,12 +25,12 @@ export const translations = {
 
   // ── Hero ──
   hero: {
-    badge: { tr: 'Antalya Merkezli Web Tasarım, SEO ve Yapay Zeka Optimizasyonu', en: 'Antalya Based Web Design, SEO and AI Optimization' },
-    title1: { tr: 'Daha Fazla Görünürlük.', en: 'More Visibility.' },
-    title2: { tr: 'Daha Fazla Müşteri.', en: 'More Customers.' },
+    badge: { tr: '✨ Next.js + SEO + Yapay Zeka Optimizasyonu', en: '✨ Next.js + SEO + AI Optimization' },
+    title1: { tr: 'Sınırları Aşan Mühendislik,', en: 'Engineering Without Borders,' },
+    title2: { tr: 'Dönüşüm Odaklı Performans', en: 'Performance That Converts' },
     description: {
-      tr: 'İşletmenizi Google\'da, ChatGPT\'de ve yapay zeka destekli arama sistemlerinde öne çıkaracak yüksek performanslı web siteleri ve dijital büyüme sistemleri geliştiriyoruz. Akdeniz turizmini bizzat sektörün içinden tanıyor; turizm, e-ticaret, sağlık, emlak ve tüm sektörlere saha tecrübesiyle şekillendirilmiş çözümler sunuyoruz.',
-      en: 'We build high performance websites and digital growth systems that put your business ahead on Google, ChatGPT, and AI powered search engines. We know Mediterranean tourism from the inside and deliver field tested solutions for tourism, e-commerce, healthcare, real estate, and all sectors.',
+      tr: 'Türkiye\'den dünyaya: turizm, e-ticaret, sağlık, emlak ve vizyoner markalar için Next.js tabanlı ultra hızlı web mimarisi. Arama Motoru Optimizasyonu (SEO) ve Yapay Zeka Optimizasyonu (AIO, GEO, AEO) ile sadece Google\'da değil, ChatGPT, Perplexity ve Gemini\'de de zirveye oynayan sistemler kuruyoruz. Farkımız net: Akdeniz turizmini dışarıdan izleyen bir ajans değiliz. Define Tours başta olmak üzere villa kiralama, acente ve otel operasyonlarının sahasını avucumuzun içi gibi biliyoruz. Bu saha tecrübesini, Commodore 64\'ten beri gelen mühendislik disiplinimizle birleştirip size web sitesi değil, satış makinesi teslim ediyoruz. Hazır şablon ve hantal sistem yok. 95+ PageSpeed, yapay zeka çağına hazır mimari var.',
+      en: 'From Turkey to the world: ultra-fast Next.js web architecture for tourism, e-commerce, healthcare, real estate, and visionary brands. Search Engine Optimization (SEO) and AI Optimization (AIO, GEO, AEO) power systems that compete for the top spot not just on Google, but on ChatGPT, Perplexity, and Gemini. Our difference is clear: we are not an agency watching Mediterranean tourism from the outside. We know villa rentals, agencies, and hotel operations inside out, starting with Define Tours. We combine this field expertise with engineering discipline dating back to the Commodore 64 era to deliver not a website, but a sales machine. No templates, no sluggish infrastructure. 95+ PageSpeed, AI era ready architecture included.',
     },
     cta: { tr: 'Ücretsiz Analiz Al', en: 'Get Free Analysis' },
     watchVideo: { tr: 'Projeleri İncele', en: 'View Projects' },
@@ -512,14 +512,14 @@ export const translations = {
   // ── Author Box (E-E-A-T Yazar Kutusu) ──
   author: {
     name: { tr: 'Koray Aksoy', en: 'Koray Aksoy' },
-    role: { tr: 'Kurucu & Full Stack Geliştirici', en: 'Founder & Full Stack Developer' },
+    role: { tr: 'Kurucu, Full Stack Geliştirici ve Define Tours Dijital Operasyon Müdürü', en: 'Founder, Full Stack Developer and Define Tours Digital Operations Manager' },
     bio: {
-      tr: 'Yazılım geliştirme ve SEO alanlarındaki deneyimini Akdeniz turizm sektöründe aktif görev alarak birleştiriyor. Define Tours\'ta satış ve dijital operasyonlarda yer alıyor. Next.js, React, TypeScript ve Tailwind CSS ile performans odaklı projeler geliştiriyor.',
-      en: 'Combines software development and SEO expertise with active involvement in Mediterranean tourism. Works in sales and digital operations at Define Tours. Builds performance-focused projects with Next.js, React, TypeScript, and Tailwind CSS.',
+      tr: 'Commodore 64 ile başlayan teknoloji tutkusu, 20 yılı aşkın ticari saha tecrübesi ve 15 yılı aşkın full-stack geliştirme uzmanlığına dönüştü. Define Tours\'ta satış operasyonu ve dijitalden sorumlu yönetici olarak Akdeniz turizmini içeriden yönetiyor. Next.js, React, TypeScript ve Tailwind CSS ile Google ve ChatGPT\'de birinci sıraya oynayan sistemler kuruyor.',
+      en: 'Tech passion started with Commodore 64, evolved into 20+ years of commercial field experience and 15+ years of full-stack development expertise. Manages Mediterranean tourism from the inside as sales operations and digital manager at Define Tours. Builds systems that compete for the top spot on Google and ChatGPT with Next.js, React, TypeScript, and Tailwind CSS.',
     },
     credentials: {
-      tr: ['Full Stack Geliştirici', 'SEO Uzmanı', 'Turizm Sektörü Deneyimi', 'Next.js & React'],
-      en: ['Full Stack Developer', 'SEO Expert', 'Tourism Industry Exp.', 'Next.js & React'],
+      tr: ['Define Tours Dijital Müdürü', 'Full Stack Geliştirici', 'SEO ve Yapay Zeka Uzmanı', '20+ Yıl Ticari Tecrübe'],
+      en: ['Define Tours Digital Manager', 'Full Stack Developer', 'SEO and AI Expert', '20+ Yrs Business Exp.'],
     },
     updatedLabel: { tr: 'Son güncelleme', en: 'Last updated' },
   },

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import HeroSection from '@/components/animations/HeroSection';
+import TechBadges from '@/components/services/TechBadges';
 import BeforeAfterSlider from '@/components/animations/BeforeAfterSlider';
 import Differentiators from '@/components/services/Differentiators';
 import LiveStats from '@/components/services/LiveStats';
@@ -24,6 +25,7 @@ export default function HomePage() {
     <>
       <WebVitalsReporter />
       <HeroSection />
+      <TechBadges />
       <BeforeAfterSlider />
       <Differentiators />
       <LiveStats />

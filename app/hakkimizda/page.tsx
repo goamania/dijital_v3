@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda | Dijital V3 — Web Tasarım, SEO ve Dijital Dönüşüm Stüdyosu',
-  description: 'Dijital V3; Antalya, Kemer ve Kalkan bölgesinde web tasarım, SEO, yapay zeka optimizasyonu (AIO), GEO ve özel yazılım geliştirme hizmetleri sunan dijital dönüşüm stüdyosudur.',
+  title: 'Hakkımızda | Dijital V3 - SEO, AIO, GEO, AEO Uyumlu Dijital Mimari',
+  description: 'Define Tours operasyonu ve Commodore 64\'ten gelen 20 yılı aşkın tecrübe. Next.js ile 95+ PageSpeed, Arama Motoru Optimizasyonu (SEO), Yapay Zeka Optimizasyonu (AIO), Üretken Motor (GEO) ve Yanıt Motoru (AEO) optimizasyonu. Akdeniz turizmini içeriden bilen teknoloji stüdyosu.',
+  keywords: ['Next.js ajans', 'GEO optimizasyon', 'AEO', 'AIO', 'turizm web tasarım', 'Antalya Kemer web ajansı', '95 PageSpeed'],
   alternates: { canonical: 'https://www.dijitalv3.com/hakkimizda' },
   openGraph: {
-    title: 'Hakkımızda | Dijital V3 — Web Tasarım, SEO ve Dijital Dönüşüm Stüdyosu',
-    description: 'Antalya, Kemer ve Kalkan bölgesinde web tasarım, SEO, AIO, GEO ve özel yazılım geliştirme. Turizm sektörünü içeriden tanıyan bir ekip.',
+    title: 'Dijital V3 | Sınırları Aşan Mühendislik',
+    description: 'Hazır şablon yok. 95+ PageSpeed, yapay zeka çağına hazır mimari var.',
     url: 'https://www.dijitalv3.com/hakkimizda',
     type: 'website',
   },
@@ -30,6 +31,11 @@ export default function HakkimizdaPage() {
         url: 'https://www.dijitalv3.com/',
         logo: 'https://www.dijitalv3.com/logo.png',
         foundingDate: '2020',
+        sameAs: [
+          'https://www.definetours.com',
+          'https://www.linkedin.com/company/dijitalv3',
+          'https://www.instagram.com/dijitalv3',
+        ],
         areaServed: ['Antalya', 'Kemer', 'Kalkan', 'Fethiye', 'Türkiye'],
         knowsAbout: [
           'Web Design',
@@ -42,14 +48,19 @@ export default function HakkimizdaPage() {
           'React',
           'TypeScript',
           'Tailwind CSS',
+          'Core Web Vitals',
         ],
       },
       {
         '@type': 'Person',
         '@id': 'https://www.dijitalv3.com/#koray-aksoy',
         name: 'Koray Aksoy',
-        jobTitle: 'Founder & Full Stack Developer',
+        jobTitle: 'Founder, Full Stack Developer and Define Tours Digital Operations Manager',
         worksFor: { '@id': 'https://www.dijitalv3.com/#organization' },
+        sameAs: [
+          'https://www.definetours.com',
+          'https://www.linkedin.com/company/dijitalv3',
+        ],
         knowsAbout: [
           'SEO',
           'Technical SEO',
@@ -60,6 +71,8 @@ export default function HakkimizdaPage() {
           'AIO',
           'GEO',
           'AEO',
+          'Core Web Vitals',
+          'PageSpeed Optimization',
         ],
       },
     ],
