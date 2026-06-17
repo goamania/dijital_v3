@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import HeroSection from '@/components/animations/HeroSection';
 import BeforeAfterSlider from '@/components/animations/BeforeAfterSlider';
+import Differentiators from '@/components/services/Differentiators';
 import LiveStats from '@/components/services/LiveStats';
 import AiAnswer from '@/components/services/AiAnswer';
 import ExpertiseGrid from '@/components/services/ExpertiseGrid';
@@ -24,6 +25,7 @@ export default function HomePage() {
       <WebVitalsReporter />
       <HeroSection />
       <BeforeAfterSlider />
+      <Differentiators />
       <LiveStats />
       <AiAnswer />
       <ExpertiseGrid />

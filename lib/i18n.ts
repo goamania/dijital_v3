@@ -25,15 +25,15 @@ export const translations = {
 
   // ── Hero ──
   hero: {
-    badge: { tr: '✨ Küresel Dijital Dönüşüm Ortağınız', en: '✨ Your Global Digital Transformation Partner' },
-    title1: { tr: 'Sınırları Aşan', en: 'Digital Excellence' },
-    title2: { tr: 'Dijital Mükemmellik', en: 'Without Borders' },
+    badge: { tr: 'Antalya Merkezli Web Tasarım, SEO ve Yapay Zeka Optimizasyonu', en: 'Antalya Based Web Design, SEO and AI Optimization' },
+    title1: { tr: 'Daha Fazla Görünürlük.', en: 'More Visibility.' },
+    title2: { tr: 'Daha Fazla Müşteri.', en: 'More Customers.' },
     description: {
-      tr: 'Türkiye\'den dünyaya: turizm, e-ticaret, sağlık, emlak ve tüm sektörlere özel web tasarım, SEO ve dijital dönüşüm. Akdeniz turizmini avucumuzun içi gibi biliyor, bu bilgiyi küresel ölçekte işletmenize avantaja çeviriyoruz.',
-      en: 'From Turkey to the world: web design, SEO, and digital transformation for tourism, e-commerce, healthcare, real estate, and all sectors. We know Mediterranean tourism inside out and turn this expertise into global advantage for your business.',
+      tr: 'İşletmenizi Google\'da, ChatGPT\'de ve yapay zeka destekli arama sistemlerinde öne çıkaracak yüksek performanslı web siteleri ve dijital büyüme sistemleri geliştiriyoruz. Akdeniz turizmini bizzat sektörün içinden tanıyor; turizm, e-ticaret, sağlık, emlak ve tüm sektörlere saha tecrübesiyle şekillendirilmiş çözümler sunuyoruz.',
+      en: 'We build high performance websites and digital growth systems that put your business ahead on Google, ChatGPT, and AI powered search engines. We know Mediterranean tourism from the inside and deliver field tested solutions for tourism, e-commerce, healthcare, real estate, and all sectors.',
     },
-    cta: { tr: 'Projeni Başlat', en: 'Start Your Project' },
-    watchVideo: { tr: 'Başarı Hikayelerimizi İzle', en: 'Watch Success Stories' },
+    cta: { tr: 'Ücretsiz Analiz Al', en: 'Get Free Analysis' },
+    watchVideo: { tr: 'Projeleri İncele', en: 'View Projects' },
   },
 
   // ── Services ──
