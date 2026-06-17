@@ -343,7 +343,7 @@ const faqPageSchema = {
 };
 
 return (
-    <html lang={lang} className={`${inter.variable} ${plusJakarta.variable}`} data-scroll-behavior="smooth">
+    <html lang={lang} className={`dark ${inter.variable} ${plusJakarta.variable}`} data-scroll-behavior="smooth">
       <head>
         <link rel="canonical" href={lang === 'en' ? 'https://www.dijitalv3.com/en' : 'https://www.dijitalv3.com'} />
         <link rel="alternate" hrefLang="tr" href="https://www.dijitalv3.com" />

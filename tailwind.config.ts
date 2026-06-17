@@ -10,46 +10,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ── Dijital V3 Premium Marka Renk Paleti ──
-        // Primary: Derin İndigo-Mavi — güven, profesyonellik, teknoloji
-        // Accent:  Sıcak Amber-Altın — premium his, enerji, aksiyon
-        // Neutral: Yumuşak Sıcak Gri — kurumsal ama soğuk değil
+        // ── Dijital V3 Dark-First Premium Paleti ──
+        // Primary: Elektrik Mavisi — teknoloji, güven, modern
+        // Accent:  Cyan/Teal — tazelik, dijital, yenilikçi
+        // Surface: Slate-950/900 — derin koyu arka plan
         primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#4f46e5',  // Ana marka rengi — Indigo 600
-          600: '#4338ca',
-          700: '#3730a3',
-          800: '#312e81',
-          900: '#1e1b4b',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',  // Elektrik Mavisi 500
+          600: '#2563eb',  // Ana marka rengi
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
         accent: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',  // Ana vurgu rengi — Amber 500
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-        },
-        // Yumuşak sıcak nötr — slate yerine stone tonları
-        warm: {
-          50: '#fafaf9',
-          100: '#f5f5f4',
-          200: '#e7e5e4',
-          300: '#d6d3d1',
-          400: '#a8a29e',
-          500: '#78716c',
-          600: '#57534e',
-          700: '#44403c',
-          800: '#292524',
-          900: '#1c1917',
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',  // Cyan 500
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
         },
       },
       fontFamily: {

@@ -4,53 +4,45 @@
 
 @layer base {
   :root {
-    /* ── Dijital V3 Premium Renk Sistemi (HSL) ── */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    /* Primary: Indigo tonları */
-    --primary: 243 75% 59%;
+    /* ── Dark-First (varsayılan) ── */
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 12%;
+    --card-foreground: 210 40% 98%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-    /* Accent: Amber tonları */
-    --accent-brand: 38 92% 50%;
+    --accent-brand: 189 94% 43%;
     --accent-brand-foreground: 0 0% 100%;
-    /* Secondary / Muted */
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    /* System */
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 243 75% 59%;
-    --radius: 0.75rem;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 221 83% 53%;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 243 75% 59%;
+  /* Light mode: .dark class yoksa (toggle ile kaldırıldığında) */
+  html:not(.dark) {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 5%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-    --accent-brand: 38 92% 50%;
+    --accent-brand: 189 94% 43%;
     --accent-brand-foreground: 0 0% 100%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --destructive: 0 62.8% 30.6%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 5%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 243 75% 59%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
   }
 }
 
@@ -59,7 +51,7 @@
     @apply border-slate-200 dark:border-slate-700;
   }
   body {
-    @apply bg-white text-warm-900 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-300;
+    @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-300;
   }
 }
 
@@ -88,6 +80,66 @@ html {
 
 /* Selection styling — marka primary rengi ile uyumlu */
 ::selection {
-  background-color: rgba(79, 70, 229, 0.25);
-  color: #312e81;
+  background-color: rgba(59, 130, 246, 0.25);
+  color: #1e3a8a;
+}
+
+/* ── Gelişmiş Mikro-Etkileşimler ── */
+
+/* Kart hover: yükselme + gölge + border glow */
+.hover-card {
+  @apply transition-all duration-300 ease-out;
+}
+.hover-card:hover {
+  @apply -translate-y-1 shadow-xl;
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+}
+
+/* Link alt çizgi animasyonu */
+.link-underline {
+  @apply relative inline-block;
+}
+.link-underline::after {
+  content: '';
+  @apply absolute left-0 -bottom-0.5 w-0 h-0.5 bg-primary-500 transition-all duration-300;
+}
+.link-underline:hover::after {
+  @apply w-full;
+}
+
+/* Buton shine efekti */
+.btn-shine {
+  @apply relative overflow-hidden;
+}
+.btn-shine::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+}
+.btn-shine:hover::after {
+  @apply opacity-100;
+}
+
+/* Görsel hafif zoom */
+.img-zoom {
+  @apply transition-transform duration-500 ease-out;
+}
+.img-zoom:hover {
+  @apply scale-[1.03];
+}
+
+/* Smooth scale + shadow for interactive elements */
+.interactive {
+  @apply transition-all duration-200;
+}
+.interactive:hover {
+  @apply scale-[1.02];
+}
+.interactive:active {
+  @apply scale-[0.98];
 }

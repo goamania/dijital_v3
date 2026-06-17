@@ -54,7 +54,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-primary-950 to-slate-950">
       {/* 3D Background — Sadece masaüstünde render edilir, mobilde performans için atlanır */}
       <div className="absolute inset-0 opacity-40">
         {isLoaded && !isMobile && (
