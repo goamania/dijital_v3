@@ -150,18 +150,24 @@ export default function PriceCalculator() {
         >
           {/* Step indicator */}
           <div className="flex items-center gap-2 mb-8">
-            {(['type', 'pages', 'features'] as Step[]).map((s, i) => (
+            {(['type', 'pages', 'features'] as const).map((s, i) => {
+              const isCompleted =
+                step === 'result' ||
+                (s === 'type' && step !== 'type') ||
+                (s === 'pages' && step !== 'type' && step !== 'pages');
+              const isActive = step === s && step !== 'result';
+              return (
               <div key={s} className="flex items-center gap-2 flex-1">
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${
-                    step === 'result' || (s === 'type' && step !== 'type') || (s === 'pages' && (step === 'features' || step === 'result'))
+                    isCompleted
                       ? 'bg-green-500 text-white'
-                      : step === s
+                      : isActive
                       ? 'bg-primary-600 text-white'
                       : 'bg-slate-200 dark:bg-slate-700 text-slate-500'
                   }`}
                 >
-                  {step === 'result' || ((s === 'type' && step !== 'type') || (s === 'pages' && (step === 'features' || step === 'result'))) ? (
+                  {isCompleted ? (
                     <CheckIcon className="w-5 h-5" />
                   ) : (
                     i + 1
