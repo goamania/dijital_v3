@@ -3,6 +3,7 @@ import HeroSection from '@/components/animations/HeroSection';
 import BeforeAfterSlider from '@/components/animations/BeforeAfterSlider';
 import LiveStats from '@/components/services/LiveStats';
 import AiAnswer from '@/components/services/AiAnswer';
+import ExpertiseGrid from '@/components/services/ExpertiseGrid';
 import ServicesSection from '@/components/services/ServicesSection';
 import WhyChooseUs from '@/components/services/WhyChooseUs';
 import IndustriesSection from '@/components/services/IndustriesSection';
@@ -25,6 +26,7 @@ export default function HomePage() {
       <BeforeAfterSlider />
       <LiveStats />
       <AiAnswer />
+      <ExpertiseGrid />
       <ServicesSection />
       <WhyChooseUs />
       <IndustriesSection />
