@@ -21,13 +21,13 @@ export default function AuthorBox() {
   const credentials = ta(lang, 'author.credentials');
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-slate-50 to-primary-50 rounded-2xl border border-slate-200 p-6 md:p-8"
+          className="bg-gradient-to-r from-slate-50 to-primary-50 dark:from-slate-900 dark:to-primary-950/30 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 md:p-8"
         >
           <div className="flex flex-col sm:flex-row items-start gap-6">
             {/* Avatar */}
@@ -38,13 +38,13 @@ export default function AuthorBox() {
             {/* Info */}
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h3 className="text-xl font-bold text-slate-900">{t(lang, 'author.name')}</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{t(lang, 'author.name')}</h3>
                 <span className="text-sm text-primary-600 font-medium bg-primary-100 px-3 py-1 rounded-full">
                   {t(lang, 'author.role')}
                 </span>
               </div>
 
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                 {t(lang, 'author.bio')}
               </p>
 
@@ -53,7 +53,7 @@ export default function AuthorBox() {
                 {credentials.map((cred) => (
                   <span
                     key={cred}
-                    className="inline-flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600"
+                    className="inline-flex items-center gap-1 px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300"
                   >
                     🏅 {cred}
                   </span>

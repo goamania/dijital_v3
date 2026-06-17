@@ -4,14 +4,16 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bars3Icon, XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, LanguageIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/lib/i18n-context';
+import { useTheme } from '@/lib/theme-provider';
 import { t } from '@/lib/i18n';
 
 export default function Header() {
   const lang = useLanguage();
   const pathname = usePathname();
   const router = useRouter();
+  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -52,7 +54,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-lg shadow-lg'
+          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -64,7 +66,7 @@ export default function Header() {
               <span className="text-white font-display font-bold text-xl">D</span>
             </div>
             <span className={`text-xl font-display font-bold transition-colors ${
-              scrolled ? 'text-slate-900' : 'text-white'
+              scrolled ? 'text-slate-900 dark:text-white' : 'text-white'
             }`}>
               Dijital V3
             </span>
@@ -77,7 +79,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary-500 ${
-                  scrolled ? 'text-slate-700' : 'text-white/90'
+                  scrolled ? 'text-slate-700 dark:text-slate-300' : 'text-white/90'
                 }`}
                 aria-current={pathname === item.href ? 'page' : undefined}
               >
@@ -90,13 +92,31 @@ export default function Header() {
               onClick={switchLang}
               className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-full border transition-all ${
                 scrolled 
-                  ? 'border-slate-300 text-slate-700 hover:bg-slate-100' 
+                  ? 'border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800' 
                   : 'border-white/30 text-white hover:bg-white/10'
               }`}
               title={lang === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç'}
             >
               <LanguageIcon className="w-4 h-4" />
               <span>{lang === 'tr' ? 'EN' : 'TR'}</span>
+            </button>
+
+            {/* Tema Değiştirici (Dark/Light) */}
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-full transition-all ${
+                scrolled 
+                  ? 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800' 
+                  : 'text-white hover:bg-white/10'
+              }`}
+              title={theme === 'dark' ? 'Aydınlık moda geç' : 'Karanlık moda geç'}
+              aria-label={theme === 'dark' ? 'Aydınlık moda geç' : 'Karanlık moda geç'}
+            >
+              {theme === 'dark' ? (
+                <SunIcon className="w-5 h-5" />
+              ) : (
+                <MoonIcon className="w-5 h-5" />
+              )}
             </button>
 
             <Link
@@ -156,6 +176,17 @@ export default function Header() {
                 >
                   <LanguageIcon className="w-4 h-4" />
                   {lang === 'tr' ? 'English (EN)' : 'Türkçe (TR)'}
+                </button>
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center justify-center gap-2 py-2.5 px-4 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-full text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                >
+                  {theme === 'dark' ? (
+                    <SunIcon className="w-4 h-4" />
+                  ) : (
+                    <MoonIcon className="w-4 h-4" />
+                  )}
+                  {theme === 'dark' ? 'Aydınlık Mod' : 'Karanlık Mod'}
                 </button>
                 <Link
                   href="/#contact"

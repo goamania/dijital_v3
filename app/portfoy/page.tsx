@@ -110,17 +110,17 @@ const projeler = [
 
 export default function PortfoyPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16 bg-slate-50">
+    <main className="min-h-screen pt-24 pb-16 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-4">
             Çalışmalarımız
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Öne Çıkan <span className="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">Projeler</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Stratejik web tasarımı ve yazılım geliştirme ile müşterilerimize nasıl olağanüstü sonuçlar kazandırdığımızı görün.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function PortfoyPage() {
           {projeler.map((proje, index) => (
             <div
               key={proje.title}
-              className={`bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow ${
+              className={`bg-white dark:bg-slate-900 rounded-2xl shadow-lg overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow ${
                 index % 2 === 1 ? 'md:flex-row-reverse' : ''
               } md:flex`}
             >
@@ -142,6 +142,8 @@ export default function PortfoyPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  priority={index === 0}
+                  loading={index === 0 ? 'eager' : 'lazy'}
                 />
                 {/* Canlı site badge (gerçek projeler için) */}
                 {proje.url !== '#' && (
@@ -166,18 +168,18 @@ export default function PortfoyPage() {
                   <span className="text-xs text-slate-400">{proje.yil}</span>
                 </div>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3">
                   {proje.title}
                 </h2>
 
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                   {proje.aciklama}
                 </p>
 
                 {/* Detay Listesi */}
                 <ul className="space-y-2 mb-6">
                   {proje.detaylar.map((detay) => (
-                    <li key={detay} className="flex items-start gap-2 text-sm text-slate-600">
+                    <li key={detay} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                       <span className="text-primary-500 mt-0.5">▸</span>
                       {detay}
                     </li>
@@ -185,7 +187,7 @@ export default function PortfoyPage() {
                 </ul>
 
                 {/* Teknoloji & Link */}
-                <div className="flex flex-wrap items-center gap-4 mt-auto pt-4 border-t border-slate-100">
+                <div className="flex flex-wrap items-center gap-4 mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
                   <span className="text-xs text-slate-400 bg-slate-100 px-3 py-1.5 rounded-full font-mono">
                     {proje.teknoloji}
                   </span>
@@ -212,7 +214,7 @@ export default function PortfoyPage() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <p className="text-lg text-slate-600 mb-6">Siz de böyle bir proje hayal ediyor musunuz?</p>
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">Siz de böyle bir proje hayal ediyor musunuz?</p>
           <a
             href="/#contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all text-lg"

@@ -113,7 +113,7 @@ export default function LeadForm() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 to-primary-50">
+    <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 to-primary-50 dark:from-slate-950 dark:to-primary-950/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -121,11 +121,11 @@ export default function LeadForm() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4">
             {t(lang, 'contact.title1')}
             <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'contact.title2')}</span>
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-600 dark:text-slate-300">
             {t(lang, 'contact.description')}
           </p>
         </motion.div>
@@ -137,11 +137,11 @@ export default function LeadForm() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-white rounded-2xl shadow-xl p-12 text-center"
+              className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-12 text-center"
             >
               <CheckCircleIcon className="w-20 h-20 text-green-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t(lang, 'contact.success.title')}</h3>
-              <p className="text-lg text-slate-600 mb-8">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t(lang, 'contact.success.title')}</h3>
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
                 {optimisticState.message || t(lang, 'contact.success.message')}
               </p>
               <button
@@ -162,11 +162,11 @@ export default function LeadForm() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+              className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 md:p-12"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     {t(lang, 'contact.fields.name')} *
                   </label>
                   <input
@@ -182,7 +182,7 @@ export default function LeadForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     {t(lang, 'contact.fields.email')} *
                   </label>
                   <input
@@ -192,13 +192,13 @@ export default function LeadForm() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                     placeholder={t(lang, 'contact.fields.email')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     {t(lang, 'contact.fields.phone')}
                   </label>
                   <input
@@ -207,13 +207,13 @@ export default function LeadForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                     placeholder="+90 531 276 0791"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="company" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     {t(lang, 'contact.fields.company')}
                   </label>
                   <input
@@ -222,14 +222,14 @@ export default function LeadForm() {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                     placeholder={t(lang, 'contact.fields.company')}
                   />
                 </div>
               </div>
 
               <div className="mb-6">
-                <label htmlFor="service" className="block text-sm font-semibold text-slate-700 mb-2">
+                <label htmlFor="service" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                   {t(lang, 'contact.fields.service')} *
                 </label>
                 <select
@@ -238,7 +238,7 @@ export default function LeadForm() {
                   value={formData.service}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
                 >
                   {services.map((service) => (
                     <option key={service.value} value={service.value}>
@@ -249,7 +249,7 @@ export default function LeadForm() {
               </div>
 
               <div className="mb-8">
-                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                   {t(lang, 'contact.fields.message')} *
                 </label>
                 <textarea
@@ -259,13 +259,13 @@ export default function LeadForm() {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
                   placeholder={t(lang, 'contact.fields.message')}
                 />
               </div>
 
               {/* KVKK Onayı — 6698 sayılı Kişisel Verilerin Korunması Kanunu gereği zorunludur */}
-              <div className="mb-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+              <div className="mb-6 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -275,7 +275,7 @@ export default function LeadForm() {
                     className="mt-1 w-5 h-5 text-primary-600 border-slate-300 rounded focus:ring-primary-500 cursor-pointer flex-shrink-0"
                     aria-required="true"
                   />
-                  <span className="text-sm text-slate-600 leading-relaxed">
+                  <span className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {t(lang, 'contact.kvkkFullText')}
                   </span>
                 </label>

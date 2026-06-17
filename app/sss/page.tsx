@@ -16,15 +16,15 @@ const faqs = [
 
 export default function SSSPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
+    <main className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Sıkça Sorulan Sorular</h1>
-        <p className="text-xl text-slate-600 mb-12">Hizmetlerimiz hakkında en çok merak edilenler.</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Sıkça Sorulan Sorular</h1>
+        <p className="text-xl text-slate-600 dark:text-slate-300 mb-12">Hizmetlerimiz hakkında en çok merak edilenler.</p>
         <div className="space-y-6">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-6">
-              <h2 className="text-lg font-bold text-slate-900 mb-2">{faq.q}</h2>
-              <p className="text-slate-600">{faq.a}</p>
+              <div key={i} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h2>
+              <p className="text-slate-600 dark:text-slate-300">{faq.a}</p>
             </div>
           ))}
         </div>

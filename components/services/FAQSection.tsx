@@ -24,7 +24,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -33,14 +33,14 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-4">
             {t(lang, 'faq.badge')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4">
             {t(lang, 'faq.title1')}
             <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'faq.title2')}</span>
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-600 dark:text-slate-300">
             {t(lang, 'faq.description')}
           </p>
         </motion.div>
@@ -54,16 +54,16 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="border border-slate-200 rounded-xl overflow-hidden"
+              className="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
                 id={`faq-question-${index}`}
               >
-                <span className="text-lg font-semibold text-slate-900 pr-4">
+                <span className="text-lg font-semibold text-slate-900 dark:text-white pr-4">
                   {faq.question}
                 </span>
                 <svg
@@ -90,7 +90,7 @@ export default function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                    <div className="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>

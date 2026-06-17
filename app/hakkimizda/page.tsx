@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function HakkimizdaPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
+    <main className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Hakkımızda</h1>
-        <div className="prose prose-lg max-w-none text-slate-700">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Hakkımızda</h1>
+        <div className="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
           <p>Dijital V3, 2020 yılında Antalya/Kemer'de kurulmuş, web tasarım, SEO ve dijital dönüşüm alanında uzmanlaşmış bir teknoloji ajansıdır.</p>
           <p>Kurucumuz Koray Aksoy'un 15+ yıllık full-stack geliştirme deneyimiyle, müşterilerimize modern teknolojiler kullanarak yüksek performanslı ve dönüşüm odaklı dijital çözümler sunuyoruz.</p>
           <h2>Misyonumuz</h2>

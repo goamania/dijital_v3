@@ -19,7 +19,7 @@ export default function IndustriesSection() {
   const industries = getIndustries(lang);
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -28,14 +28,14 @@ export default function IndustriesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-4">
             {t(lang, 'industries.badge')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4">
             {t(lang, 'industries.title1')}
             <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'industries.title2')}</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             {t(lang, 'industries.description')}
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function IndustriesSection() {
             >
               <Link
                 href={industry.href}
-                className="group block h-full bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-200 hover:border-primary-300 transition-all overflow-hidden"
+                className="group block h-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all overflow-hidden"
               >
                 {/* Icon Header */}
                 <div className={`h-32 bg-gradient-to-br ${industry.color} flex items-center justify-center`}>
@@ -67,10 +67,10 @@ export default function IndustriesSection() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">
                     {industry.name}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                     {industry.description}
                   </p>
                   <div className="flex items-center text-primary-600 font-semibold gap-2 group-hover:gap-3 transition-all">

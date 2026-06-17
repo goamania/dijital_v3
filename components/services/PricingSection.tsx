@@ -61,7 +61,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-b from-white to-slate-50">
+    <section id="pricing" className="py-24 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -70,14 +70,14 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-4">
             {t(lang, 'pricing.badge')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4">
             {t(lang, 'pricing.title1')}
             <span className="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'pricing.title2')}</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             {t(lang, 'pricing.description')}
           </p>
         </motion.div>
@@ -97,7 +97,7 @@ export default function PricingSection() {
                 className={`relative bg-white rounded-2xl border-2 ${
                   plan.recommended
                     ? 'border-primary-500 shadow-2xl shadow-primary-500/20 scale-105 z-10'
-                    : 'border-slate-200 shadow-lg hover:shadow-xl'
+                    : 'border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl'
                 } overflow-hidden transition-all`}
               >
                 {plan.recommended && (
@@ -107,17 +107,17 @@ export default function PricingSection() {
                 )}
 
                 <div className={`p-8 ${plan.recommended ? 'pt-14' : ''}`}>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
                     {t(lang, `pricing.plans.${plan.key}.name`)}
                   </h3>
-                  <p className="text-slate-500 mb-6 text-sm leading-relaxed">
+                  <p className="text-slate-500 dark:text-slate-400 mb-6 text-sm leading-relaxed">
                     {t(lang, `pricing.plans.${plan.key}.desc`)}
                   </p>
 
                   <div className="mb-6">
-                    <span className="text-sm text-slate-400">{t(lang, 'pricing.startingAt')}</span>
+                    <span className="text-sm text-slate-400 dark:text-slate-500">{t(lang, 'pricing.startingAt')}</span>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-5xl font-bold text-slate-900">
+                      <span className="text-5xl font-bold text-slate-900 dark:text-white">
                         {t(lang, `pricing.plans.${plan.key}.price`)}
                       </span>
                       <span className="text-xl text-slate-400">{t(lang, 'pricing.currency')}</span>
@@ -129,7 +129,7 @@ export default function PricingSection() {
                     className={`block w-full text-center py-3.5 rounded-xl font-semibold transition-all duration-300 ${
                       plan.recommended
                         ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white shadow-lg hover:shadow-xl hover:scale-[1.03]'
-                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700'
                     }`}
                   >
                     {plan.recommended ? t(lang, 'pricing.getStarted') : t(lang, 'pricing.contactUs')}
@@ -139,7 +139,7 @@ export default function PricingSection() {
                     {features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckIcon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-600 text-sm">{feature}</span>
+                        <span className="text-slate-600 dark:text-slate-300 text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -154,9 +154,9 @@ export default function PricingSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+          className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden"
         >
-          <div className="p-6 bg-slate-50 border-b border-slate-200">
+          <div className="p-6 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
             <h3 className="text-xl font-bold text-slate-900 text-center">
               {t(lang, 'pricing.comparison.title')}
             </h3>

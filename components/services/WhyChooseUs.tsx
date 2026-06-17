@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
   const features = getFeatures(lang);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 text-white">
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 dark:from-slate-950 dark:via-primary-950 dark:to-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Bar */}
         <motion.div

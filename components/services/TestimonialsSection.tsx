@@ -26,7 +26,7 @@ export default function TestimonialsSection() {
   const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 6);
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -35,14 +35,14 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-sm font-semibold mb-4">
             {t(lang, 'testimonials.badge')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4">
             {t(lang, 'testimonials.title1')}
             <span className="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent"> {t(lang, 'testimonials.title2')}</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             {t(lang, 'testimonials.description')}
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col"
+              className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-6">
@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-slate-700 leading-relaxed mb-6 flex-1">
+              <blockquote className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6 flex-1">
                 &ldquo;{testimonial.content}&rdquo;
               </blockquote>
 
@@ -86,8 +86,8 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900">{testimonial.name}</div>
-                  <div className="text-sm text-slate-500">{testimonial.role}</div>
+                  <div className="font-bold text-slate-900 dark:text-white">{testimonial.name}</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>

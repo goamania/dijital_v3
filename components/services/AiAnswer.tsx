@@ -22,14 +22,14 @@ export default function AiAnswer() {
   return (
     <section
       aria-label="AI Overview — Dijital V3 Hakkında Özet"
-      className="relative py-16 bg-gradient-to-r from-primary-50 via-white to-amber-50 border-b border-primary-100"
+      className="relative py-16 bg-gradient-to-r from-primary-50 via-white to-amber-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-primary-100 dark:border-slate-700"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl border border-primary-200 shadow-sm p-6 md:p-8"
+          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-slate-700 shadow-sm p-6 md:p-8"
         >
           {/* AI Answer etiketi — LLM'ler için entity sinyali */}
           <div className="flex items-center gap-2 mb-4">
@@ -44,7 +44,7 @@ export default function AiAnswer() {
 
           {/* Ana özet metni — 40-50 kelime, entity-zengin, doğal dil */}
           <p
-            className="text-lg md:text-xl text-slate-700 leading-relaxed font-medium"
+            className="text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed font-medium"
             // data-ai-summary niteliği, AI crawler'ların bu metni
             // sayfanın birincil özeti olarak tanımlamasını sağlar
             data-ai-summary="true"

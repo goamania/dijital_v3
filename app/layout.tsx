@@ -3,6 +3,12 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { cookies } from "next/headers";
 import { LanguageProvider } from "@/lib/i18n-context";
 import type { Language } from "@/lib/i18n";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Breadcrumb from "@/components/layout/Breadcrumb";
+import LeadMagnet from "@/components/forms/LeadMagnet";
+import ExitIntentPopup from "@/components/forms/ExitIntentPopup";
+import { ThemeProvider } from "@/lib/theme-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -401,9 +407,16 @@ return (
         >
           {skipToContentText}
         </a>
-        <LanguageProvider lang={lang}>
-          {children}
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider lang={lang}>
+            <Header />
+            <Breadcrumb />
+            <div id="main-content">{children}</div>
+            <Footer />
+            <LeadMagnet />
+            <ExitIntentPopup />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -56,10 +56,10 @@
 
 @layer base {
   * {
-    @apply border-slate-200;
+    @apply border-slate-200 dark:border-slate-700;
   }
   body {
-    @apply bg-white text-warm-900 antialiased;
+    @apply bg-white text-warm-900 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-300;
   }
 }
 

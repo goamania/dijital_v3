@@ -44,7 +44,7 @@ export default function LeadMagnet() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-slate-900 via-primary-900 to-slate-900 text-white shadow-2xl border-t border-primary-700/50"
+        className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-slate-900 via-primary-900 to-slate-900 dark:from-slate-950 dark:via-primary-950 dark:to-slate-950 text-white shadow-2xl border-t border-primary-700/50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

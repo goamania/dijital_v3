@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function KariyerPage() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
+    <main className="min-h-screen pt-24 pb-16 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Kariyer</h1>
-        <p className="text-xl text-slate-600 mb-12">Dijital V3 ailesine katılın, birlikte büyüyelim.</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Kariyer</h1>
+        <p className="text-xl text-slate-600 dark:text-slate-300 mb-12">Dijital V3 ailesine katılın, birlikte büyüyelim.</p>
         <p className="text-slate-500">Şu anda açık pozisyonumuz bulunmamaktadır. Güncellemeler için bizi takip edin.</p>
       </div>
     </main>

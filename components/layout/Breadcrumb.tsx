@@ -67,7 +67,7 @@ export default function Breadcrumb() {
       />
 
       {/* Görsel Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="w-full bg-slate-50 border-b border-slate-200">
+      <nav aria-label="Breadcrumb" className="w-full bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 mt-20">
         <ol className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm">
           <li>
             <Link
@@ -83,7 +83,7 @@ export default function Breadcrumb() {
             <li key={item.href} className="flex items-center gap-2">
               <ChevronRightIcon className="w-4 h-4 text-slate-400 flex-shrink-0" />
               {index === items.length - 1 ? (
-                <span className="text-slate-900 font-medium" aria-current="page">
+                <span className="text-slate-900 dark:text-white font-medium" aria-current="page">
                   {item.label}
                 </span>
               ) : (
