@@ -28,11 +28,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dijitalv3.com'),
   title: {
-    default: "Dijital V3 | Ödüllü Web Tasarım & Dijital Ajans",
+    default: "Dijital V3 | Akdeniz Turizm İşletmelerine Web Tasarım & SEO",
     template: "%s | Dijital V3",
   },
-  description: "Vizyonunuzu etkileyen, dönüştüren ve markanızı yükselten çarpıcı web siteleri. Premium web tasarım, e-ticaret ve dijital pazarlama hizmetleri.",
-  keywords: ["web tasarım", "dijital ajans", "e-ticaret", "SEO optimizasyonu", "marka kimliği", "web geliştirme"],
+  description: "Antalya, Kemer, Kalkan'daki otel, villa, araç kiralama ve tur acentelerine özel web tasarım, SEO ve dijital dönüşüm. Define Tours, Kemer Car Rental referanslarıyla.",
+  keywords: ["web tasarım antalya", "kemer web tasarım", "turizm web sitesi", "otel web sitesi", "villa kiralama sitesi", "araç kiralama yazılımı", "dijital ajans", "SEO hizmeti"],
   authors: [{ name: "Dijital V3 Ajans" }],
   creator: "Dijital V3",
   publisher: "Dijital V3 Ajans",
