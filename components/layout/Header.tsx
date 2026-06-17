@@ -14,8 +14,9 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
+  const isHome = pathname === '/' || pathname === '/en';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(!isHome);
 
   // Dil değiştirme — Next.js router ile sayfa yenilemeden geçiş
   const switchLang = useCallback(() => {
@@ -40,12 +41,18 @@ export default function Header() {
   ];
 
   useEffect(() => {
+    // Ana sayfa değilse her zaman scrolled gibi görün (navbar içerikte kaybolmasın)
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
 
   return (
     <motion.header

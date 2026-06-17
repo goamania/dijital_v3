@@ -52,11 +52,11 @@ export default function PricingSection() {
   ];
 
   const CheckOrX = ({ value }: { value: boolean | string }) => {
-    if (typeof value === 'string') return <span className="text-sm font-semibold text-slate-800">{value}</span>;
+    if (typeof value === 'string') return <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">{value}</span>;
     return value ? (
       <CheckIcon className="w-5 h-5 text-green-500 mx-auto" />
     ) : (
-      <XMarkIcon className="w-5 h-5 text-slate-300 mx-auto" />
+      <XMarkIcon className="w-5 h-5 text-slate-300 dark:text-slate-600 mx-auto" />
     );
   };
 
@@ -94,7 +94,7 @@ export default function PricingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`relative bg-white rounded-2xl border-2 ${
+                className={`relative bg-white dark:bg-slate-900 rounded-2xl border-2 ${
                   plan.recommended
                     ? 'border-primary-500 shadow-2xl shadow-primary-500/20 scale-105 z-10'
                     : 'border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl'
@@ -115,12 +115,12 @@ export default function PricingSection() {
                   </p>
 
                   <div className="mb-6">
-                    <span className="text-sm text-slate-400 dark:text-slate-500">{t(lang, 'pricing.startingAt')}</span>
+                    <span className="text-sm text-slate-400 dark:text-slate-400">{t(lang, 'pricing.startingAt')}</span>
                     <div className="flex items-baseline gap-1">
                       <span className="text-5xl font-bold text-slate-900 dark:text-white">
                         {t(lang, `pricing.plans.${plan.key}.price`)}
                       </span>
-                      <span className="text-xl text-slate-400">{t(lang, 'pricing.currency')}</span>
+                      <span className="text-xl text-slate-400 dark:text-slate-400">{t(lang, 'pricing.currency')}</span>
                     </div>
                   </div>
 
@@ -157,26 +157,26 @@ export default function PricingSection() {
           className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden"
         >
           <div className="p-6 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-            <h3 className="text-xl font-bold text-slate-900 text-center">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center">
               {t(lang, 'pricing.comparison.title')}
             </h3>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left p-4 font-semibold text-slate-700 text-sm">{t(lang, 'pricing.comparison.feature')}</th>
-                  <th className="p-4 font-semibold text-slate-700 text-sm text-center">{t(lang, 'pricing.plans.starter.name')}</th>
-                  <th className="p-4 font-semibold text-primary-700 text-sm text-center bg-primary-50">{t(lang, 'pricing.plans.professional.name')}</th>
-                  <th className="p-4 font-semibold text-slate-700 text-sm text-center">{t(lang, 'pricing.plans.enterprise.name')}</th>
+                <tr className="border-b border-slate-200 dark:border-slate-700">
+                  <th className="text-left p-4 font-semibold text-slate-700 dark:text-slate-200 text-sm">{t(lang, 'pricing.comparison.feature')}</th>
+                  <th className="p-4 font-semibold text-slate-700 dark:text-slate-200 text-sm text-center">{t(lang, 'pricing.plans.starter.name')}</th>
+                  <th className="p-4 font-semibold text-primary-700 dark:text-primary-300 text-sm text-center bg-primary-50 dark:bg-primary-900/30">{t(lang, 'pricing.plans.professional.name')}</th>
+                  <th className="p-4 font-semibold text-slate-700 dark:text-slate-200 text-sm text-center">{t(lang, 'pricing.plans.enterprise.name')}</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonRows.map((row, i) => (
-                  <tr key={i} className={`border-b border-slate-100 ${i % 2 === 0 ? 'bg-slate-50/50' : ''}`}>
-                    <td className="p-4 text-sm font-medium text-slate-700">{row.feature}</td>
+                  <tr key={i} className={`border-b border-slate-100 dark:border-slate-700 ${i % 2 === 0 ? 'bg-slate-50/50 dark:bg-slate-800/30' : ''}`}>
+                    <td className="p-4 text-sm font-medium text-slate-700 dark:text-slate-200">{row.feature}</td>
                     <td className="p-4 text-center"><CheckOrX value={row.starter} /></td>
-                    <td className="p-4 text-center bg-primary-50/50"><CheckOrX value={row.professional} /></td>
+                    <td className="p-4 text-center bg-primary-50/50 dark:bg-primary-900/20"><CheckOrX value={row.professional} /></td>
                     <td className="p-4 text-center"><CheckOrX value={row.enterprise} /></td>
                   </tr>
                 ))}

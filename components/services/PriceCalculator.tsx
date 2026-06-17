@@ -182,7 +182,7 @@ export default function PriceCalculator() {
                     <button
                       key={tp.id}
                       onClick={() => { setSelectedType(tp.id); setStep('pages'); }}
-                      className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
+                      className={`w-full text-left p-4 rounded-xl border-2 transition-all bg-white dark:bg-slate-800 ${
                         selectedType === tp.id
                           ? 'border-primary-500 bg-primary-50 dark:bg-primary-950/30'
                           : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-700'
@@ -205,7 +205,7 @@ export default function PriceCalculator() {
                     <button
                       key={p.id}
                       onClick={() => { setSelectedPages(p.id); setStep('features'); }}
-                      className={`p-4 rounded-xl border-2 transition-all text-center ${
+                      className={`p-4 rounded-xl border-2 transition-all text-center bg-white dark:bg-slate-800 ${
                         selectedPages === p.id
                           ? 'border-primary-500 bg-primary-50 dark:bg-primary-950/30'
                           : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
@@ -215,7 +215,7 @@ export default function PriceCalculator() {
                     </button>
                   ))}
                 </div>
-                <button onClick={() => setStep('type')} className="mt-4 text-sm text-slate-500 hover:text-primary-600 transition-colors">
+                <button onClick={() => setStep('type')} className="mt-4 text-sm text-slate-500 dark:text-slate-400 hover:text-primary-600 transition-colors">
                   ← {lang === 'tr' ? 'Geri' : 'Back'}
                 </button>
               </motion.div>
@@ -229,7 +229,7 @@ export default function PriceCalculator() {
                   {t.featureOptions.map((f) => (
                     <label
                       key={f.id}
-                      className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                      className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all bg-white dark:bg-slate-800 ${
                         selectedFeatures.includes(f.id)
                           ? 'border-primary-500 bg-primary-50 dark:bg-primary-950/30'
                           : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
@@ -251,7 +251,7 @@ export default function PriceCalculator() {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <button onClick={() => setStep('pages')} className="text-sm text-slate-500 hover:text-primary-600 transition-colors">
+                  <button onClick={() => setStep('pages')} className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-600 transition-colors">
                     ← {lang === 'tr' ? 'Geri' : 'Back'}
                   </button>
                   <button

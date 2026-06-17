@@ -74,12 +74,12 @@ export default function BeforeAfterSlider() {
             {isTr ? 'Gerçek Dönüşüm' : 'Real Transformation'}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            {isTr ? 'Web Siteniz Böyle Değişir' : 'This Is How Your Website Changes'}
+            {isTr ? 'Define Tours — Eski vs Yeni' : 'Define Tours — Before vs After'}
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
             {isTr
-              ? 'Sürükle veya kaydır — eski site ile yeni site arasındaki farkı görün.'
-              : 'Drag or swipe — see the difference between old and new.'}
+              ? 'Sürükle veya kaydır — 2022 PHP site ile 2026 Next.js site arasındaki farkı görün.'
+              : 'Drag or swipe — compare the 2022 PHP site with the 2026 Next.js version.'}
           </p>
         </motion.div>
 
@@ -94,36 +94,35 @@ export default function BeforeAfterSlider() {
           onTouchStart={() => setIsDragging(true)}
           onTouchEnd={() => setIsDragging(false)}
         >
-          {/* AFTER görsel (tam genişlik, altta) */}
+          {/* AFTER görsel — Yeni Next.js site */}
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=675&fit=crop"
-              alt={isTr ? 'Yeni web sitesi' : 'New website'}
+              src="/photos/definetours-2026.webp"
+              alt="Define Tours yeni web sitesi — 2026 Next.js"
               fill
               className="object-cover"
               sizes="100vw"
+              priority
             />
-            {/* After etiketi */}
             <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg z-10">
-              {isTr ? 'YENİ' : 'NEW'}
+              {isTr ? '2026 — YENİ' : '2026 — NEW'}
             </div>
           </div>
 
-          {/* BEFORE görsel (clip ile kesilmiş) */}
+          {/* BEFORE görsel — Eski PHP site */}
           <div
             className="absolute inset-0 overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=1200&h=675&fit=crop&sat=-50&blur=2"
-              alt={isTr ? 'Eski web sitesi' : 'Old website'}
+              src="/photos/definetours-2025.webp"
+              alt="Define Tours eski PHP web sitesi — 2025"
               fill
               className="object-cover"
               sizes="100vw"
             />
-            {/* Before etiketi */}
-            <div className="absolute top-4 left-4 bg-slate-700 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg z-10">
-              {isTr ? 'ESKİ' : 'OLD'}
+            <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg z-10">
+              {isTr ? '2022 — ESKİ PHP' : '2022 — OLD PHP'}
             </div>
           </div>
 
@@ -151,8 +150,16 @@ export default function BeforeAfterSlider() {
           className="text-center text-gray-500 text-sm mt-6"
         >
           {isTr
-            ? 'Kemer Car Rental — Eski site vs. Dijital V3 ile yenilenen hali. Dönüşüm oranı: +%45.'
-            : 'Kemer Car Rental — Old site vs. redesigned by Dijital V3. Conversion rate: +45%.'}
+            ? 'Define Tours — 2022 PHP site vs. 2026 Dijital V3 Next.js yenilemesi. '
+            : 'Define Tours — 2022 PHP site vs. 2026 Dijital V3 Next.js redesign. '}
+          <a
+            href="https://web.archive.org/web/20221006051141/http://definetours.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-primary-400 transition-colors"
+          >
+            {isTr ? 'Eski siteyi Wayback Machine\'de görün →' : 'View old site on Wayback Machine →'}
+          </a>
         </motion.p>
       </div>
     </section>
